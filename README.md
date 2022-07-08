@@ -1,1 +1,1 @@
-# Alternative-Pr-fung---Softwareentwicklung
+# Alternative-Prüfung---Softwareentwicklung
