@@ -80,5 +80,10 @@ dotnet new console
 * Programme sind auf dem Raaspberry jetzt zwar kompilierbar, jedoch bleibt der zugriff auf die GPIOS verwehrt. Deswegen müssen wir ein weiteres Packet hinzufügen, welches wir in den Ordner mit dem Programm speichern. Die Befehle können jetzt über die Bash (via Putty), den VNC-viewer oder Visual Studio eingegeben werden.
 
 ```
-dotnet add package Iot.Device.Bindings --version 2.1.0-*
+dotnet add package System.Device.Gpio
+```
+* Damit wir die Peripherie nutzen können müssen wir in den selben Ordner noch ein weiteres Packet hinterlegen
+
+```
+dotnet add package Iot.Device.Bindings --version 2.1.0-* 
 ```
