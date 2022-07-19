@@ -69,5 +69,11 @@ wget -O - https://raw.githubusercontent.com/pjgpetecodes/dotnet5pi/master/instal
 sudo reboot
 ```
 * Jetzt müssen wir visual Studio auch über Remote-SSH mit dem Raspberry verbinden. Dazu gehen wir auf Visual Studio und Installieren die "Remote-SSH" Erweiterung 
-
-
+```
+ms-vscode-remote.remote-ssh
+```
+* Als hostname tragen wir **Pi@-IP-Adress-** ein und Visual Studio verbindet sich mit dem Raspberry Pi 
+* Auf dem Raspberry Pi erstellen wir einen Ordner, den wir dann über Visual Studio aufrufen können. Das weitere vorgehen ist wie gewohnt. eine C# Datei kann man jetzt erstellen und bearbeiten. Wie man sieht bleibt auch der Befehl gleich. 
+```
+dotnet new console
+``
