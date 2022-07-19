@@ -76,4 +76,9 @@ ms-vscode-remote.remote-ssh
 * Auf dem Raspberry Pi erstellen wir einen Ordner, den wir dann über Visual Studio aufrufen können. Das weitere vorgehen ist wie gewohnt. eine C# Datei kann man jetzt erstellen und bearbeiten. Wie man sieht bleibt auch der Befehl gleich. 
 ```
 dotnet new console
-``
+```
+* Programme sind auf dem Raaspberry jetzt zwar kompilierbar, jedoch bleibt der zugriff auf die GPIOS verwehrt. Deswegen müssen wir ein weiteres Packet hinzufügen, welches wir in den Ordner mit dem Programm speichern. Die Befehle können jetzt über die Bash (via Putty), den VNC-viewer oder Visual Studio eingegeben werden.
+
+```
+dotnet add package Iot.Device.Bindings --version 2.1.0-*
+```
