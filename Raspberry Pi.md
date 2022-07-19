@@ -35,7 +35,7 @@ sudo raspi-config
 * Der "sudo" Befehl ist wichtig, da der Benutzer "pi" nicht genügend Berechtigungen besitzt. 
 > Man kann auch eine gesamte Session als root user nutzen mit dem "su" Befehl (aber nur eine Session, nicht dauerhaft) 
 * Im Raspberry Pi Software Configuration Tool nehmen wir dann folgende änderungen vor
-  * Aktivieren VNC-Server
+  * Aktivieren VNC-Server (virtual Network Computing) 
   * stellen VNC Resolution auf 1920x1080
   * dann starten wir den Raspberry neu
 ```
@@ -43,4 +43,12 @@ sudo root
 ```
 * Auf dem Rechner, über den wir auf den Raspberry zugreifen wollen laden wir uns "real VNC viewer" runter und Installieren das Programmm
 * wenn alle Konfigurationen stimmen und der Raspberry den VNC-Server gestartet hat, können wir die IPv4 Adresse als Host bei "real VNC viewer" eingeben und nach eingabe des Benutzers und des dazugehörigen Passwortes gelangen wir auf die Grafische oberfläsche des Raspberry Pi 
+* damit wir später die Sensoren und GPIOs ansteuern können müssen wir weitere Konfigurationen im "raspi-config" Menü vornehmen
+* wir wechseln in der Raspberry Pi Configuration auf die Interfaces und aktivieren folgendes
+    * SPI (Serial Peripheral Interface)
+    * Serial Port (serielle Schnittstelle, bei denen einzelne Bits zeitgleich nacheinander übertragen werden) 
+    * serial Console 
+    * 1-Wire (Eindraht-Bus, Die Busteilnehmer werden durch Master gesteuert. Slaves sind mit individuellen Adressen ab Werk ausgestattet und fertig kalibriert)
+    * Remote GPIO (Das erlaubt den Remot zugriff auf die Raspberry Pi GPIOs)
+
 
