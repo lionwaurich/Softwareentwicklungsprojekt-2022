@@ -58,4 +58,9 @@ Das Raspberry Pi OS ist ein Linux basiertes System und .Net ein windows Framewor
 
 # .Net auf dem Raspberry Pi Installieren
 
-* 
+* Dieser Befehl wird über Putty auf der Bash eingegeben und Installiert .Net 6 auf dem Raspberry Pi
+
+```
+wget -O - https://raw.githubusercontent.com/pjgpetecodes/dotnet5pi/master/install.sh | sudo bash
+```
+
