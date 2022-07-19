@@ -56,11 +56,18 @@ sudo root
 Das Raspberry Pi OS ist ein Linux basiertes System und .Net ein windows Framework. .Net nutzt man zum entwickeln und Ausführen von C# Programmen. Über Visual Studio ist es schnell und einfach Programme zu entwickeln, kompilieren und auszuführen. Leider ist es nicht ohne probleme möglich C-Sharp Programme auf dem Raspberry Pi auszuführen. Man könnte das Programm auf einen Stick Laden und mit dem Bytecode-Interpreter "MONO" auf dem Raspberry ausführen. Dies ist aber ein sehr aufwendiger vorgang, denn man müsste bei Fehlern das Programm immer wieder neu auf den stick laden und auf dem Raspberry ausführen. Oder man nutzt das Windows IOT Tool. Dies ist aber auch nicht zu empfehlen, weil man damit das Raspberry Pi Os ersetzten müsste. Der Raspberry läuft am besten mit dem Hauseigenen Linux System. Viele Tools wären beim Windows IOT nicht mit dabei und Bugs treten vermehrt auf. Deswegen haben wir uns dafür Entschieden, ".Net" auf dem Raspberry Pi zu installieren und damit gehen wir diesen Problemen aus dem Weg. ".Net" kann man nicht in den Erweiterungen des Raspberry Pi finden, jedoch lässt es sich über die Bash installieren. Der Aufwand ist einmalig zwar höher, erleichtert die spätere Entwicklung des Programms jedoch enorm.
 
 
-# .Net auf dem Raspberry Pi Installieren
+# .Net auf dem Raspberry Pi Installieren und Visual Studio nutzen
 
 * Dieser Befehl wird über Putty auf der Bash eingegeben und Installiert .Net 6 auf dem Raspberry Pi
 
 ```
 wget -O - https://raw.githubusercontent.com/pjgpetecodes/dotnet5pi/master/install.sh | sudo bash
 ```
+* Danach muss der Raspberry Pi wieder neu gestartet werden bzw REBOOT
+
+```
+sudo reboot
+```
+* Jetzt müssen wir visual Studio auch über Remote-SSH mit dem Raspberry verbinden. Dazu gehen wir auf Visual Studio und Installieren die "Remote-SSH" Erweiterung 
+
 
