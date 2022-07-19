@@ -28,8 +28,19 @@
 > Secure Shell ist ein Netzwerkprotokoll, welches eine möglichkeit gibt, über ein ungesichertes Netzwerk gesichert auf einen Rechner zuzugreifen
 * Dort Melden wir uns mit dem Benutzernamen und Passwort an, welches wir zuvor konfiguriert haben
 > Standartpasswort/Benutzername falls die Konfiguration vorher nicht vorgenommen wurde : Benutzername = pi Passwort = raspberry
-* Dann muss das "Raspberry Pi Software Konfigration Tool" aufgerufen werden
+* Dann muss das "Raspberry Pi Software Configuration Tool" aufgerufen werden
 ```
 sudo raspi-config
 ```
+* Der "sudo" Befehl ist wichtig, da der Benutzer "pi" nicht genügend Berechtigungen besitzt. 
+> Man kann auch eine gesamte Session als root user nutzen mit dem "su" Befehl (aber nur eine Session, nicht dauerhaft) 
+* Im Raspberry Pi Software Configuration Tool nehmen wir dann folgende änderungen vor
+  * Aktivieren VNC-Server
+  * stellen VNC Resolution auf 1920x1080
+  * dann starten wir den Raspberry neu
+```
+sudo root 
+```
+* Auf dem Rechner, über den wir auf den Raspberry zugreifen wollen laden wir uns "real VNC viewer" runter und Installieren das Programmm
+* wenn alle Konfigurationen stimmen und der Raspberry den VNC-Server gestartet hat, können wir die IPv4 Adresse als Host bei "real VNC viewer" eingeben und nach eingabe des Benutzers und des dazugehörigen Passwortes gelangen wir auf die Grafische oberfläsche des Raspberry Pi 
 
