@@ -18,7 +18,7 @@
 > Falls das WLAN nicht Konfiguriert wurde, muss der Raspberry Pi über ein LAN Kabel mit dem Router verbunden werden
 * Die IP-Adresse des Raspberry Pi finden wir in den Router Einstellungen/Informationen unseres Providers 
 * Die IPv4-Adresse des Raspberry Pi stellen wir auf statisch
-> Man kann auch selber eine IPv4 wählen und sie dem Raspberry zuteilen. Die Einstellung auf Dynamisch lassen ist möglich, jedoch muss man bei jeder neuanmeldung die IP-Adresse neu ermitteln (unnötiger Aufwand)
+> Man kann auch selber eine IPv4 wählen und sie dem Raspberry zuteilen. Die Einstellung auf Dynamisch lassen ist möglich, jedoch wird davon abgeraten, da die IP des Raspberry pi dann immer neu ermittelt werden muss
 
 
 # Remote Accsess auf den Raspberry Pi 
