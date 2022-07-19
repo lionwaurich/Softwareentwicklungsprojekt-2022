@@ -51,4 +51,6 @@ sudo root
     * 1-Wire (Eindraht-Bus, Die Busteilnehmer werden durch Master gesteuert. Slaves sind mit individuellen Adressen ab Werk ausgestattet und fertig kalibriert)
     * Remote GPIO (Das erlaubt den Remot zugriff auf die Raspberry Pi GPIOs)
 
+# .Net auf dem Raspberry Installieren
 
+Das Raspberry Pi OS ist ein Linux basiertes System und .Net ein windows Framework. .Net nutzt man zum entwickeln und Ausführen von C# Programmen. Über Visual Studio ist es schnell und einfach Programme zu entwickeln, kompilieren und auszuführen. Leider ist es nicht ohne probleme möglich C-Sharp Programme auf dem Raspberry Pi auszuführen. Man könnte das Programm auf einen Stick Laden und mit dem Bytecode-Interpreter "MONO" auf dem Raspberry ausführen. Dies ist aber ein sehr aufwendiger vorgang, denn man müsste bei Fehlern das Programm immer wieder neu auf den stick laden und auf dem Raspberry ausführen. Oder man nutzt das Windows IOT Tool. Dies ist aber auch nicht zu empfehlen, weil man damit das Raspberry Pi Os ersetzten müsste. Die Hardware 
