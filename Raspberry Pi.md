@@ -82,7 +82,7 @@ dotnet new console
 ```
 dotnet add package System.Device.Gpio
 ```
-* Damit wir die Peripherie nutzen können müssen wir in den selben Ordner noch ein weiteres Packet hinterlegen
+* Damit wir die Peripherie nutzen können müssen wir in den selben Ordner noch ein weiteres Packet hinterlegen. Dieses Packet würde eigentlich aussreichen um auf die GPIOs direkt zuzugreifen, jedoch gab es dabei öfter Probleme, weshalb wir "System.Device.Gpio" seperat hinterlegt hatten.
 
 ```
 dotnet add package Iot.Device.Bindings --version 2.1.0-* 
