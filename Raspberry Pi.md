@@ -12,7 +12,7 @@
 # Installieren des Raspberry PI Os 
 
 * Die SD mittels Raspberry Pi Imager beschreiben 
-* Bei der Konfiguration sollte der SSH zugang aktiviert werden, sowie die WLAN Einstellungen 
+* Bei der Konfiguration sollte der SSH zugang aktiviert werden, die WLAN Einstellungen und Benutzername/Passwort gewählt werden
 > **Achtung** Falls der SSH zugang nicht aktiviert wurde muss eine Datei mit dem Namen "SSH" im "boot" Ordner hinzugefügt werden
 * Nach der Installation des OS den Raspberry Starten 
 > Falls das WLAN nicht Konfiguriert wurde, muss der Raspberry Pi über ein LAN Kabel mit dem Router verbunden werden
@@ -25,4 +25,11 @@
 
 * Auf dem Rechner, mit dem wir den Raspberry Ansteuern wollen, müssen wir das Programm "Putty" Installieren
 * Die ermittelte IPv4 geben wir als Host Name ein und gelangen so auf die Bash des Raspberry Pi via Secure Shell (SSH) 
-* 
+> Secure Shell ist ein Netzwerkprotokoll, welches eine möglichkeit gibt, über ein ungesichertes Netzwerk gesichert auf einen Rechner zuzugreifen
+* Dort Melden wir uns mit dem Benutzernamen und Passwort an, welches wir zuvor konfiguriert haben
+> Standartpasswort/Benutzername falls die Konfiguration vorher nicht vorgenommen wurde : Benutzername = pi Passwort = raspberry
+* Dann muss das "Raspberry Pi Software Konfigration Tool" aufgerufen werden
+```
+sudo raspi-config
+```
+
