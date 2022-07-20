@@ -104,6 +104,8 @@ dotnet add package Iot.Device.Bindings --version 2.1.0-*
    * Jumper Kabel
 
 
+![](GPIO-Pi4.png)<!-- width="50%" -->
+
 ## AM2302 
 
 * Der ASM2302 basiert auf der Basis des DHT22 und misst die Luftfeuchtigkeit und die Temperatur. Ausgegeben werden diese werte digital über einen Datenpin
