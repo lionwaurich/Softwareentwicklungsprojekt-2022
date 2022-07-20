@@ -30,7 +30,7 @@
 > Standartpasswort/Benutzername falls die Konfiguration vorher nicht vorgenommen wurde : Benutzername = pi Passwort = raspberry
 * Dann muss das "Raspberry Pi Software Configuration Tool" aufgerufen werden
 ```
-sudo raspi-config
+$\color{yellow} \sudo raspi-config$
 ```
 * Der "sudo" Befehl ist wichtig, da der Benutzer "pi" nicht genügend Berechtigungen besitzt. 
 > Man kann auch eine gesamte Session als root user nutzen mit dem "su" Befehl (aber nur eine Session, nicht dauerhaft) 
@@ -111,4 +111,6 @@ dotnet add package Iot.Device.Bindings --version 2.1.0-*
 * Der ASM2302 basiert auf der Basis des DHT22 und misst die Luftfeuchtigkeit und die Temperatur. Ausgegeben werden diese werte digital über einen Datenpin
 
 ![AM2302](/Grafiken/AM2302.png)
+
+
 
