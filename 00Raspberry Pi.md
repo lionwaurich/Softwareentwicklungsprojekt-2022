@@ -9,11 +9,11 @@
 
 ---------------------------------------------------------------------------------
 # Chronologie 
- * [Installieren des Raspberry Pi Os](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/edit/main/00Raspberry%20Pi.md#installieren-des-raspberry-pi-os)
- * [Remote Access auf den Raspberry Pi](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/edit/main/00Raspberry%20Pi.md#Remote-Access-auf-den-Raspberry-Pi)
- * [C-Sharp auf dem Raspberry Pi](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/edit/main/00Raspberry%20Pi.md#C-Sharp-auf-dem-Raspberry-Pi)
- * [.Net auf dem Raspberry Pi Installieren und Visual Studio nutzen](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/edit/main/00Raspberry%20Pi.md#.Net-auf-dem-Raspberry-Pi-Installieren-und-Visual-Studio-nutzen)
- * [Ansteuern der Sensoren](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/edit/main/00Raspberry%20Pi.md#Ansteuern-der-Sensoren)
+ * [Installieren des Raspberry Pi Os](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/00Raspberry%20Pi.md#installieren-des-raspberry-pi-os)
+ * [Remote Access auf den Raspberry Pi](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/00Raspberry%20Pi.md#Remote-Access-auf-den-Raspberry-Pi)
+ * [C-Sharp auf dem Raspberry Pi](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/00Raspberry%20Pi.md#C-Sharp-auf-dem-Raspberry-Pi)
+ * [.Net auf dem Raspberry Pi Installieren und Visual Studio nutzen](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/00Raspberry%20Pi.md#.Net-auf-dem-Raspberry-Pi-Installieren-und-Visual-Studio-nutzen)
+ * [Ansteuern der Sensoren](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/00Raspberry%20Pi.md#Ansteuern-der-Sensoren)
 
 # Installieren des Raspberry PI Os 
 
