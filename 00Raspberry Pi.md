@@ -30,7 +30,7 @@
 > Standartpasswort/Benutzername falls die Konfiguration vorher nicht vorgenommen wurde : Benutzername = pi Passwort = raspberry
 * Dann muss das "Raspberry Pi Software Configuration Tool" aufgerufen werden
 ```
-$\color{green} sudo raspi-config
+sudo raspi-config
 ```
 * Der "sudo" Befehl ist wichtig, da der Benutzer "pi" nicht genügend Berechtigungen besitzt. 
 > Man kann auch eine gesamte Session als root user nutzen mit dem "su" Befehl (aber nur eine Session, nicht dauerhaft) 
