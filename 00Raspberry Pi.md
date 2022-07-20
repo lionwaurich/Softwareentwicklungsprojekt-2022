@@ -102,9 +102,9 @@ dotnet add package Iot.Device.Bindings --version 2.1.0-*
  
 * Weitere Komponenten
    * `20x4 LCD Display`
+   * `Pegelwandler` (3,3V-5V)
    * `MCP3008` (Analog Digital Wandler)
    * `RGB-LED`
-   * `Pegelwandler` (3,3V-5V)
    * `Piezo Buzzer`
    * Steckboard
    * Jumper Kabel
