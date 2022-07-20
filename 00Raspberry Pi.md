@@ -110,4 +110,4 @@ dotnet add package Iot.Device.Bindings --version 2.1.0-*
 
 * Der ASM2302 basiert auf der Basis des DHT22 und misst die Luftfeuchtigkeit und die Temperatur. Ausgegeben werden diese werte digital über einen Datenpin
 
-
+![AM2302](/Grafiken/AM2302.png")
