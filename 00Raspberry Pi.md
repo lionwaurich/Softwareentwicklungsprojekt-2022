@@ -87,3 +87,25 @@ dotnet add package System.Device.Gpio
 ```
 dotnet add package Iot.Device.Bindings --version 2.1.0-* 
 ```
+
+# Ansteuern der Sensoren 
+
+* Sensormodelle
+   * MQ-135 (Luftqualitätssensor: Benzol, Alkohol, Rauch)
+   * AM2302 (Temperatur und Luftfeuchtigkeit)
+ 
+* Weitere Komponenten
+   * 20x4 LCD Display
+   * MCP3008 (Analog Digital Wandler)
+   * RGB-LED
+   * Pegelwandler (3,3V-5V)
+   * Piezo Buzzer
+   * Steckboard
+   * Jumper Kabel
+
+
+## AM2302 
+
+* Der ASM2302 basiert auf der Basis des DHT22 und misst die Luftfeuchtigkeit und die Temperatur. Ausgegeben werden diese werte digital über einen Datenpin
+
+
