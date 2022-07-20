@@ -18,8 +18,8 @@
 
 # Installieren des Raspberry PI Os 
 
-* Die Micro SD karte mittels Raspberry Pi Imager beschreiben 
-* Bei der Konfiguration sollte der SSH zugang aktiviert werden, die WLAN Einstellungen und Benutzername/Passwort gewählt werden
+* Die Micro SD Karte mittels Raspberry Pi Imager beschreiben 
+* Bei der Konfiguration sollte der SSH zugang aktiviert, die WLAN Einstellungen und Benutzername/Passwort gewählt werden
 > **Achtung** Falls der SSH zugang nicht aktiviert wurde muss eine Datei mit dem Namen "SSH" im "boot" Ordner hinzugefügt werden
 * Nach der Installation des OS den Raspberry Starten 
 > Falls das WLAN nicht Konfiguriert wurde, muss der Raspberry Pi über ein LAN Kabel mit dem Router verbunden werden
