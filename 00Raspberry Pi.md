@@ -95,11 +95,11 @@ dotnet add package Iot.Device.Bindings --version 2.1.0-*
    * `AM2302` (Temperatur und Luftfeuchtigkeit)
  
 * Weitere Komponenten
-   * 20x4 LCD Display
+   * `20x4 LCD Display`
    * `MCP3008` (Analog Digital Wandler)
-   * RGB-LED
+   * `RGB-LED`
    * `Pegelwandler` (3,3V-5V)
-   * Piezo Buzzer
+   * `Piezo Buzzer`
    * Steckboard
    * Jumper Kabel
 
