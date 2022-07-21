@@ -132,5 +132,6 @@ while(true)
     Console.WriteLine($"{dht.Humidity}°C");
     Console.WriteLine($"{dht.Temperature}%");
     Thread.Sleep(1000);
-}```
+}
+```
 
