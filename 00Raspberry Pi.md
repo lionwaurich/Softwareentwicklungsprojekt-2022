@@ -121,7 +121,8 @@ dotnet add package Iot.Device.Bindings --version 2.1.0-*
 
 * Mit dem Folgenden C# Code werden die Sensordaten ausgelesen. Das Programm snipped wird dann in das Main Programm Implementiert
 
-```
+<!-- data-marker="23 0 36 200 log;" -->
+```csharp                                      Usage
 using System;
 using Iot.Device.DHTxx;
 
