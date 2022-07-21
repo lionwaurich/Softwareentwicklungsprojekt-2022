@@ -121,5 +121,16 @@ dotnet add package Iot.Device.Bindings --version 2.1.0-*
 
 * Mit dem Folgenden C# Code werden die Sensordaten ausgelesen. Das Programm snipped wird dann in das Main Programm Implementiert
 
+```
+using System;
+using Iot.Device.DHTxx;
 
+using (Dht22 dht = new Dht22(4))
+
+while(true)
+{   
+    Console.WriteLine($"{dht.Humidity}°C");
+    Console.WriteLine($"{dht.Temperature}%");
+    Thread.Sleep(1000);
+}```
 
