@@ -15,6 +15,7 @@
  * [.Net auf dem Raspberry Pi Installieren und Visual Studio nutzen](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/00Raspberry%20Pi.md#net-auf-dem-raspberry-pi-installieren-und-visual-studio-nutzen)
  * [Ansteuern der Sensoren](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/00Raspberry%20Pi.md#Ansteuern-der-Sensoren)
     * [AM2302](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/00Raspberry%20Pi.md#am2302)
+    * [Nutzung des MQ-135 mithilfe des MCP3008 und Pegelwandlers](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/00Raspberry%20Pi.md#nutzung-des-mq135-mithilfe-des-mcp3008-und-pgelwandlers)
 
 # Installieren des Raspberry PI Os 
 
