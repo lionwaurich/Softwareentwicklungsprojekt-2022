@@ -120,7 +120,7 @@ dotnet add package Iot.Device.Bindings --version 2.1.0-*
 
 ![AM2302](/Grafiken/Fritzing_Steckpläne/AM2302.png)
 
-* Mit dem Folgenden C# Code werden die Sensordaten ausgelesen. Das Programm snipped wird dann in das Main Programm Implementiert
+* Mit dem Folgenden C# Code werden die Sensordaten ausgelesen. Das Programm snippet wird dann in das Main Programm Implementiert
 
 
 ```csharp                                      Usage
@@ -205,3 +205,23 @@ using (Mcp3008 mcp = new Mcp3008(spi))
 
 * Die Komponenten sind zwar nicht die gleichen, jedoch sind die Anschlüsse gleich. Der Piezo Buzzer ist an 3,3V und GND angeschlossen, wenn GPIO(27) auf High gesetzt wird erzeugt er einen Ton. Wenn GPIO(27) auf Low gesetzt ist, dann bleibt der Buzzer aus. Bei der RGB-LED ist es anders, dort ist GPIO(22) mit Rot verbunden und GPIO(23) mit Grün. Aktiviert man GPIO(22) so leuchtet die LED Rot, aktiviert man GPIO(23) leuchtet sie Grün. Aktiviert man beide zusammen leuchtet die LED Gelb. so kann man die RGB-LED in verschiedenen Farben leuchten lassen.
 
+* Dies ist der Programm snippet, welches die RGB-LED Gelb Leuchten lässt 
+```csharp                                      Usage
+using System;
+using System.Device.Gpio;
+using System.Threading;
+
+Console.WriteLine("Blinken");
+int Rot = 22;
+int Grün = 23;
+using var controller = new GpioController();
+controller.OpenPin(Rot, PinMode.Output);
+controller.OpenPin(Grün, PinMode.Output);
+while (true)
+{
+    controller.Write(Rot, PinValue.High);
+    controller.Write(Grün, PinValue.High);
+    Thread.Sleep(1000);
+   
+}
+```
