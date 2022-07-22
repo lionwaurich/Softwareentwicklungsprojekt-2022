@@ -141,9 +141,9 @@ while(true)
 * Der MQ135 ist ein Luftqualitätssensor, welcher die Daten als Analoges Signal ausgibt. Der Digitale ausgang gibt nur an, ob die Luftqualität "Gut" oder "schlecht" ist. Den Genauen Wert muss man Analog auslesen. Das Problem dabei ist, dass der Raspberry Pi keine internen ADC (Analog Digital Konverter) besitzt. Aus diesem Grund nutzen wir den MCP3008 als ADC, wodurch wir das Analoge Signal umwandeln und die genauen Daten nutzen können. Des Weiteren arbeitet der MQ135 mit 5V, die GPIOs des Raspberry Pi arbeiten jedoch mit 3,3V. Damit der Raspberry Pi nicht beschädigt wird nutzen wir einen Pegelwandler, welcher die 5V Eingangsspannung in 3,3V umwandelt.
 
 
-* Die Folgende Grafik zeigt den Steckplan der drei Komponenten. Leider hatten wir bei "Fritzing" (Software für den grafischen Aufbau von Schaltplänen und Steckplänen) nur den MQ-2 Gas Sensor zur verfügung. Da die Anschlüsse der Sensoren jedoch die Selben sind, nutzen wir diesen zur veranschaulichung. 
+* Die Folgende Grafik zeigt den Steckplan der drei Komponenten. Leider hatten wir bei "Fritzing" (Software für den grafischen Aufbau von Schaltplänen und Steckplänen) nur den MQ-2 Gas Sensor zur verfügung. Da die Anschlüsse der Sensoren jedoch die Selben sind, nutzen wir diesen Sensor zur veranschaulichung. 
 
 
-
+![MCP3008_Pegelwandler_MQ135](Grafiken/Fritzing_Steckpläne/MCP3008_Pegelwandler_MQ135.png)
 
 
