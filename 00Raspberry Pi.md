@@ -111,7 +111,7 @@ dotnet add package Iot.Device.Bindings --version 2.1.0-*
    * Jumper Kabel
 
 
-![GPIO-Pi4](/Grafiken/Fritzing_Steckpläne/GPIO-Pi4.png)
+![GPIO-Pi4](/Grafiken/Raspberry_Pi/GPIO-Pi4.png)
 
 ## AM2302 
 
