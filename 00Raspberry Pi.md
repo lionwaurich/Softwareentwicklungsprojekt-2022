@@ -148,12 +148,12 @@ while(true)
 ![MCP3008_Pegelwandler_MQ135](Grafiken/Fritzing_Steckpläne/MCP3008_Pegelwandler_MQ135.png)
 
 * Zu beginn betrachten wir den Pegelwandler. Dieser wird benötigt, da die Gpios des Raspberry Pi nur 3,3V vertragen und die Spannung des MQ135 5V beträgt. Der Bidirektionale Pegelumwandler besitzt interne Pullup wiederstände, welche dafür sorgen, dass bei 5V Eingangsspannung 3,3V als Maximalspannung am Ausgang anliegen.
-* Eingang 
+* Ausgang 
      * LV = 3,3V (Low Voltage)
      * GND 
      * LV 3 = Anschluss des MCP3008 Analog Eingang CH0
  
-* Ausgang
+* Eingang
      * HV = 5V (High Voltage)
      * Gnd 
      * Analog Eingang des Signals aus dem MQ-135
