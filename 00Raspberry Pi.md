@@ -168,4 +168,4 @@ while(true)
 * Die Bezeichnungen auf den Sensoren können heute varrieren, weil viele Hersteller den "Master-Slave" namen nicht verwenden wollen. So können Beispielsweise SDI/SDO (Serial Data in/Serial Data Out) oder D_in/D_out (Data in/Data out) vorkommen. Die Arbeitsweise bleibt jedoch gleich. 
 
 
-![Pegelwandler](/Grafiken/Raspberry_Pi/Pegelwandler.jpeg)
+![MCP3008](/Grafiken/Raspberry_Pi/MCP3008.jpeg)
