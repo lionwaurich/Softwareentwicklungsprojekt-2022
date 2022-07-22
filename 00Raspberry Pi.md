@@ -196,3 +196,7 @@ using (Mcp3008 mcp = new Mcp3008(spi))
      }
 }
 ```
+
+## Piezo Buzzer und RGB-LED
+
+* Wir haben diese Komponenten in einer Beschreibung Organisiert, weil es ein einfaches Toggeln der GPIO-Ausgänge ist. 
