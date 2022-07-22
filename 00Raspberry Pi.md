@@ -159,4 +159,11 @@ while(true)
   
   ![Pegelwandler](/Grafiken/Raspberry_Pi/Pegelwandler.jpeg)
   
-  * Da nun am MCP3008 Analog Digitalwandler 3,3V anliegen, können wir diese Information verarbeiten. 
+* Da nun am MCP3008 Analog Digitalwandler 3,3V anliegen, können wir diese Information verarbeiten. Der MCP3008 ist ein 10 Bit ADC und hat damit eine auflösung von 0-1023. Die Informationen werden als Byts mittels Bus an die Gpios übermittelt. Dabei gibt es zwei Möglichkeiten. Einmal einen I2C Bus oder den SPI (Serial Peripheral Interface) Bus. Der MCP3008 besitzt keinen I2C Bus, weshalb wir den SPI Bus nutzen müssen. SPI arbeitet nach dem "Master-Slave Prinzip", wodurch Digitale Schaltungen wie unser Aufbau miteinander verbunden werden können. 
+* Die Leitungen sehen wie Folgt aus
+   * CLK  (Serial Clock ausgehend vom Crontroller zur Synchronisation)
+   * MISO (Master Input, Slave Output)
+   * MOSI (Master Output, Slave Input)
+   * CS   (Chip select)
+* Die Bezeichnungen auf den Sensoren können heute varrieren, weil viele Hersteller den "Master-Slave" namen nicht verwenden wollen. So können Beispielsweise SDI/SDO (Serial Data in/Serial Data Out) oder D_in/D_out (Data in/Data out) vorkommen. 
+
