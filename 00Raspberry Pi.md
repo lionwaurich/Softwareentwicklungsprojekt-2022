@@ -226,7 +226,7 @@ while (true)
 }
 ```
 
-* Hier wird der Buzzer durch GPIO(27) aktiviert
+* Hier wird ein Warn Signal durch Aktivieren und Deaktivieren des Buzzers(GPIO(27)) erzeugt
 ```csharp                                      Usage
 using System;
 using System.Device.Gpio;
