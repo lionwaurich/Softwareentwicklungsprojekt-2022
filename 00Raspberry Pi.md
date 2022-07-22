@@ -165,5 +165,5 @@ while(true)
    * MISO (Master Input, Slave Output)
    * MOSI (Master Output, Slave Input)
    * CS   (Chip select)
-* Die Bezeichnungen auf den Sensoren können heute varrieren, weil viele Hersteller den "Master-Slave" namen nicht verwenden wollen. So können Beispielsweise SDI/SDO (Serial Data in/Serial Data Out) oder D_in/D_out (Data in/Data out) vorkommen. 
+* Die Bezeichnungen auf den Sensoren können heute varrieren, weil viele Hersteller den "Master-Slave" namen nicht verwenden wollen. So können Beispielsweise SDI/SDO (Serial Data in/Serial Data Out) oder D_in/D_out (Data in/Data out) vorkommen. Die Arbeitsweise bleibt jedoch gleich.
 
