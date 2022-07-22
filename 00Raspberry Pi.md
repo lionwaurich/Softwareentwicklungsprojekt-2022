@@ -203,5 +203,5 @@ using (Mcp3008 mcp = new Mcp3008(spi))
 
 ![RGB-LED und Buzzer](/Grafiken/Raspberry_Pi/RGB-LED%20und%20Buzzer.png)
 
-* Die Komponenten sind zwar nicht die gleichen, jedoch sind die Anschlüsse gleich. Der Piezo Buzzer ist an 3,3V und GND angeschlossen, wenn GPIO(27) auf High gesetzt wird erzeugt er einen Ton. Wenn GPIO(27) auf Low gesetzt ist, dann bleibt der Buzzer aus. Bei der RGB-LED ist es anders, dort ist GPIO(22) mit Rot verbunden und GPIO(23) mit Grün. Aktiviert man GPIO(22) so leuchtet die LED Rot, aktiviert man GPIO(23) leuchtet sie Grün. Aktiviert man beide zusammen leuchtet die LED Gelb. so kann man die RGb-LED in verschiedenen Farben leuchten lassen.
+* Die Komponenten sind zwar nicht die gleichen, jedoch sind die Anschlüsse gleich. Der Piezo Buzzer ist an 3,3V und GND angeschlossen, wenn GPIO(27) auf High gesetzt wird erzeugt er einen Ton. Wenn GPIO(27) auf Low gesetzt ist, dann bleibt der Buzzer aus. Bei der RGB-LED ist es anders, dort ist GPIO(22) mit Rot verbunden und GPIO(23) mit Grün. Aktiviert man GPIO(22) so leuchtet die LED Rot, aktiviert man GPIO(23) leuchtet sie Grün. Aktiviert man beide zusammen leuchtet die LED Gelb. so kann man die RGB-LED in verschiedenen Farben leuchten lassen.
 
