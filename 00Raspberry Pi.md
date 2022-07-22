@@ -148,12 +148,12 @@ while(true)
 
 * Zu beginn betrachten wir den Pegelwandler. Dieser wird benötigt, da die Gpios des Raspberry Pi nur 3,3V vertragen und die Spannung des MQ135 5V beträgt. Der Pegelumwandler wird wie Folgt Angeschlossen.
 * Eingang 
-      * LV = 3,3V (Low Voltage)
-      * GND 
-      * LV 3 = Anschluss des MCP3008 Analog Eingang CH0
+     * LV = 3,3V (Low Voltage)
+     * GND 
+     * LV 3 = Anschluss des MCP3008 Analog Eingang CH0
  
 * Ausgang
-      * HV = 5V (High Voltage)
-      * Gnd 
-      * Analog Eingang des Signals aus dem MQ-135
+     * HV = 5V (High Voltage)
+     * Gnd 
+     * Analog Eingang des Signals aus dem MQ-135
   
