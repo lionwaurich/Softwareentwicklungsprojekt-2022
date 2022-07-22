@@ -157,4 +157,6 @@ while(true)
      * Gnd 
      * Analog Eingang des Signals aus dem MQ-135
   
+  ![Pegelwandler](/Grafiken/Raspberry_Pi/Pegelwandler.jpeg)
   
+  * Da nun am MCP3008 Analog Digitalwandler 3,3V anliegen, können wir diese Information verarbeiten. 
