@@ -169,3 +169,7 @@ while(true)
 
 
 ![MCP3008](/Grafiken/Raspberry_Pi/MCP3008.jpeg)
+
+* Verlötet wurde der MCP3008 ADC von uns und dann angeschlossen wie auf dem Steckplan. Der CH0 Anschluss des MCP3008 wurde mit dem LV3 des Pegelwandlers verbunden und der A0 Output des MQ-135 mit HV3 des Pegelwandlers. Jetzt konnten wir über den SPI-Bus die Analogen Daten des MQ-135 Auslesen.
+
+
