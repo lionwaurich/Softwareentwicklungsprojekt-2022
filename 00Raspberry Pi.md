@@ -121,7 +121,7 @@ dotnet add package Iot.Device.Bindings --version 2.1.0-*
 
 * Mit dem Folgenden C# Code werden die Sensordaten ausgelesen. Das Programm snipped wird dann in das Main Programm Implementiert
 
-<!-- data-marker="23 0 36 200 log;" -->
+
 ```csharp                                      Usage
 using System;
 using Iot.Device.DHTxx;
@@ -171,5 +171,27 @@ while(true)
 ![MCP3008](/Grafiken/Raspberry_Pi/MCP3008.jpeg)
 
 * Verlötet wurde der MCP3008 ADC von uns und dann angeschlossen wie auf dem Steckplan. Der CH0 Anschluss des MCP3008 wurde mit dem LV3 des Pegelwandlers verbunden und der A0 Output des MQ-135 mit HV3 des Pegelwandlers. Jetzt konnten wir über den SPI-Bus die Analogen Daten des MQ-135 Auslesen.
+* Da die Daten über den ADC umgewandelt werden sprechen wir nicht den MQ-135 an, sondern den MCP3008. Folgendes Programm liest die Daten aus:
+
+```csharp                                      Usage
+using System;
+using System.Device.Spi;
+using System.Threading;
+using Iot.Device.Adc;
 
 
+var hardwareSpiSettings = new SpiConnectionSettings(0,0);
+
+using var spi = SpiDevice.Create(hardwareSpiSettings);
+using (Mcp3008 mcp = new Mcp3008(spi))
+{
+     while (true)
+     {
+         double value = mcp.Read(0);
+         value = value/ 10.24;
+         value = Math.Round(value,2);
+         Console.WriteLine($"{value} %");
+         Thread.Sleep(500);
+     }
+}
+```
