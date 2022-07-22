@@ -111,13 +111,13 @@ dotnet add package Iot.Device.Bindings --version 2.1.0-*
    * Jumper Kabel
 
 
-![GPIO-Pi4](/Grafiken/GPIO-Pi4.png "GPIO-PinOut")
+![GPIO-Pi4](/Grafiken/Fritzing_Steckpläne/GPIO-Pi4.png "GPIO-PinOut")
 
 ## AM2302 
 
 * Der ASM2302 basiert auf der Basis des DHT22 und misst die Luftfeuchtigkeit und die Temperatur. Ausgegeben werden diese werte digital über einen Datenpin
 
-![AM2302](/Grafiken/AM2302.png)
+![AM2302](/Grafiken/fritzing_steckplaeneAM2302.png)
 
 * Mit dem Folgenden C# Code werden die Sensordaten ausgelesen. Das Programm snipped wird dann in das Main Programm Implementiert
 
