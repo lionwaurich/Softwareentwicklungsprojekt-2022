@@ -244,3 +244,6 @@ while (true)
     Thread.Sleep(500);
 }
 ```
+## 20x4 LCD Display
+
+* Wir nutzen ein 20x4 LCD Display, damit wir alle Daten direkt sichtbar haben. Ein 16x2 Display könnte jeweils nur Zwei Daten Anzeigen und müsste immer wechseln (oder es wird sehr unübersichtlich). Unser LCD Display besitzt einen PCF8574 Remote 8-Bit I/O Expander for I2C Bus. Dieser ist dafür gedacht, dass man den LCD Display direkt mit dem Raspberry Pi verbinden kann und die Daten verarbeitet werden können. 
