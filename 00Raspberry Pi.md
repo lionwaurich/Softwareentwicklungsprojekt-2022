@@ -257,6 +257,13 @@ while (true)
 ![I2C_mitPullup](/Grafiken/Raspberry_Pi/I2C_mitPullup.jpeg)
 > Dies ist ein PCF8574 Remote 8-Bit I/O Expander mit integrierten Pullup wiederständen. Die verwendung dieser Variante ist bei einem Raspberry Pi nur mit Pegelwandler empfohlen. Der Arduino Uno als Beispiel, könnte diese Variante ohne Probleme nutzen, da er keine internen Pullup Widerstände wie der Raspberry Pi hat.
 
+| Pin Adapter                | GPIO                                                                                                                                                                         |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| VCC      | 5V                                                                                                                                                         |
+| GND               |   GND                                                                                                                                                                                       |
+| SLC         |                                                                                                                                                      
+| SDA              |  
+
 * Ein weiteres Problem des 20x4 LCD-Display ist die korrekte Anordnung der Zeilen und Spalten. Denn wenn man ein einfaches ``` lcd.Write("") ``` eingibt,
 springt der Courser von Zeile zwei, auf Zeile vier, dann auf Zeile eins und endet bei Zeile drei. So würden Texte keinen Sinn ergeben. Des Weiteren gibt es keinen logischen Zeilenumbruch, sondern nur einen Zeilenumbruch, wenn die letzte Spalte erreicht wurde. Dies führt dazu, dass jegliche Texteingaben keinen Sinn ergeben, außer sie sind kürzer als 20 Zeichen. Dieses Problem kann leider durch die Microsoft Bibliothek nicht gelöst werden. Man muss selber schauen, dass die Zeilen Anordnung einen Sinn ergibt und Zeichen wie das "°" durch ``` \u00DF ``` aufgerufen werden. Die Bibliothek reicht aus um den LCD-Display anzusteuern, jedoch muss man diese Sachen beachten. Aus diesem Grund werden bei dem Raspberry Pi gerne die eigenen Bildschirme verwendet, die dann über den Monitor-Anschluss mit Daten versorgt werden. Aber in unserem Programm haben wir den LCD-Display verwendet und die ausgabe logisch angeordnet.
 
