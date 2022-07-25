@@ -1,3 +1,15 @@
+# Alternative-Prüfung-Softwareentwicklung
+
+| Parameter                | Informationen                                                                                                                                                                          |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Veranstaltung**       | Projekt Softwareecntwicklung                                                                                                                                                           |
+| **Semester**               |   Sommersemester 2022                                                                                                                                                                                        |
+| **Hochschule**          | Technische Universität Bergakademie Freiberg                                                                                                                                                      
+| **Autoren**              | Lion Waurich (65695) / Caio Marcas Menz (66654)                            
+
+---------------------------------------------------------------------------------
+# Chronologie 
+
 ## Herangehensweise an die Software des Respberry Pi's ##
 
 Die Software wird objektorientiert programmiert und und beinhaltet 2 Klassen. Die Klassen sind CStunden und CTag, wobei CTag ein eindimensionales Array im Umfang von 24 und dem Datentyp CStunden enthält.
