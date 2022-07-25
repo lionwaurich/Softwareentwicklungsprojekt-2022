@@ -18,10 +18,11 @@ Das Programm wird objektorientiert in C-Sharp über zwei Klassen laufen. Die Sen
 
 # Verwendete Software
 
-* Visual Studio
-* .Net 6
-* Raspberry Pi OS version 04.04.2022
-* Putty           (SSH zugriff auf die Bash des Raspberry Pi)
-* RealVNC Viewer  (Remote zugriff auf den Raspberry Pi)
-* Fritzing        (für die Steckpläne)
-* ClickCharts     (für die Klassen Diagramme)
+* [Visual Studio](https://code.visualstudio.com/?wt.mc_id=DX_841432)
+* [.Net 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+* [Raspberry Pi OS version 04.04.2022](https://www.raspberrypi.com/software/)
+* [Raspberry Pi Imager](https://www.raspberrypi.com/software/)
+* [Putty](https://www.putty.org/)           (SSH zugriff auf die Bash des Raspberry Pi)
+* [RealVNC Viewer](https://www.realvnc.com/de/connect/download/viewer/)  (Remote zugriff auf den Raspberry Pi)
+* [Fritzing](https://fritzing.org/)        (für die Steckpläne)
+* [ClickCharts](https://www.nchsoftware.com/chart/de/index.html)     (für die Klassen Diagramme)
