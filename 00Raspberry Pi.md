@@ -250,7 +250,7 @@ while (true)
 *  **Achtung**: Hierbei ist es wichtig zu beachten, dass es diesen I/O Expander mit und ohne integrierte Pullup wiederstände gibt. Die GPIOs des Raspberry vertragen nur die 3,3V Eingangsspannung, das 20x4 LCD-Display arbeitet jedoch auch mit 5V. Der PCF8574 Remote 8-Bit I/O Expander sorgt auch dafür, dass die GPIOs nur 3,3V abbekommen, lässt man die Pullup Wiederstände jedoch drinnen, kann es passieren, dass die GPIOs kurzzeitig mit 5V versorgt werden. Dies kann dazu führen, dass der Raspberry Pi zerstört wird. 
 
 ![I2C_ohnePullup](/Grafiken/Raspberry_Pi/I2C_ohnePullup.jpeg)
-> Dies ist der PCF8574 Remote 8-Bit I/O Expander ohne Pullups. Diesen haben wir verwendet. 
+> Dies ist der PCF8574 Remote 8-Bit I/O Expander ohne Pullups, welcher von uns verwendet wurde. 
 
 ![I2C_mitPullup](/Grafiken/Raspberry_Pi/I2C_mitPullup.jpeg)
 > Dies ist ein PCF8574 Remote 8-Bit I/O Expander mit integrierten Pullup wiederständen. Die verwendung dieser Variante ist bei einem Raspberry Pi nur mit Pegelwandler empfohlen. Der Arduino Uno als Beispiel könnte diese Variante ohne Probleme nutzen, da er keine internen Pullups wie der Raspberry Pi hat.
