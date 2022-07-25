@@ -259,3 +259,30 @@ while (true)
 
 * Ein weiteres Problem des 20x4 LCD-Display ist die korrekte Anordnung der Zeilen und Spalten. Denn wenn man ein einfaches ``` lcd.Write("") ``` eingibt,
 springt der Courser von Zeile zwei, auf Zeile vier, dann auf Zeile eins und endet bei Zeile drei. So würden Texte keinen Sinn ergeben. Des Weiteren gibt es keinen logischen Zeilenumbruch, sondern nur einen Zeilenumbruch, wenn die letzte Spalte erreicht wurde. Dies führt dazu, dass jegliche Texteingaben keinen Sinn ergeben, außer sie sind kürzer als 20 Zeichen. Dieses Problem kann leider durch die Microsoft Bibliothek nicht gelöst werden. Man muss selber schauen, dass die Zeilen Anordnung einen Sinn ergibt und Zeichen wie das "°" durch ``` \u00DF ``` aufgerufen werden. Die Bibliothek reicht aus um den LCD-Display anzusteuern, jedoch muss man diese Sachen beachten. Aus diesem Grund werden bei dem Raspberry Pi gerne die eigenen Bildschirme verwendet, die dann über den Monitor-Anschluss mit Daten versorgt werden. Aber in unserem Programm haben wir den LCD-Display verwendet und die ausgabe logisch angeordnet.
+
+* Der folgende Programm Sniped zeigt an, wie wir den LCD Siplay angesprochen haben. Dabei ist eine Temperatur ausgabe Simuliert. Die logische Zeilenanordnung ist hierbei noch nicht implementiert, da wir sie bei einer Ausgabe nicht benötigen
+```csharp                                      Usage
+using System;
+using System.Device.Gpio;
+using System.Device.I2c;
+using System.Threading;
+using Iot.Device.CharacterLcd;
+using Iot.Device.Pcx857x;
+
+using I2cDevice i2c = I2cDevice.Create(new I2cConnectionSettings(1, 0x27));
+using var driver = new Pcf8574(i2c);
+using var lcd = new Lcd2004(registerSelectPin: 0, 
+                        enablePin: 2, 
+                        dataPins: new int[] { 4, 5, 6, 7 }, 
+                        backlightPin: 3, 
+                        backlightBrightness: 0.1f,
+                        readWritePin: 1, 
+                        controller: new GpioController(PinNumberingScheme.Logical, driver));
+while (true)
+{
+    lcd.Clear();
+    lcd.SetCursorPosition(0,0);
+    lcd.Write("Temperatur:-----\u00DFC");
+    Thread.Sleep(200);
+}
+```
