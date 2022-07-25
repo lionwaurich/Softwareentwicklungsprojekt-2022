@@ -119,7 +119,7 @@ dotnet add package Iot.Device.Bindings --version 2.1.0-*
    * Jumper Kabel
 
 
-![Raspberry_Pinout](/Grafiken/Raspberry_Pi/Raspberry_Pinout.png)
+![Raspberry_Pinout](/Grafiken/Raspberry_Pi/Raspberry_Pinout.jpg)
 
 ## AM2302 
 
