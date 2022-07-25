@@ -98,6 +98,8 @@ dotnet add package Iot.Device.Bindings --version 2.1.0-*
 ```
 
 # Ansteuern der Sensoren 
+* Schematischer Anschluss
+![Raspberry Pi Anschluss (schematisch).png](/Grafiken/Raspberr_Pi/Raspberry_Pi_Anschluss_(schematisch).png)
 
 * Sensormodelle
    * `MQ-135` (Luftqualitätssensor: Benzol, Alkohol, Rauch)
