@@ -16,8 +16,12 @@ Luftfeuchtigkeit und die Luftqualit채t mittels eines Gas-Sensors. Die Ausgabe l�
 Das Programm wird objektorientiert in C-Sharp 체ber zwei Klassen laufen. Die Sensordaten sollen im 10 Sekunden Takt erfasst und 체ber jede Stunde der Durchschnitt berechnet werden. Nach 24 Stunden sollen die Sensordaten in einer .txt Datei gespeichert werden. Steigt der Luftqualit채tswert 체ber eine Kritische Grenze, soll ein optisches und akustisches Signal ausgegeben werden.
 
 
-# Software
+# Verwendete Software
 
 * Visual Studio
 * .Net 6
 * Raspberry Pi OS version 04.04.2022
+* Putty
+* RealVNC Viewer
+* Fritzing    (f체r die Steckpl채ne)
+* ClickCharts (f체r die Klassen Diagramme)
