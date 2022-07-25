@@ -9,3 +9,13 @@ diese erstellt für jedes Stundenobjekt die Durchschnittswerte der 3 Attribute T
 
 ### CTag ###
 
+```csharp                                      Usage
+
+public tag(DateTime _now, stunden _Stunde) //Überladener Constructor
+{
+    File_Header = "[ " + _now.ToString("d") + ":\n"; //Header von txt-File soll mit "[" anfangen, für Nachvollziehbarkeit
+    Stunde[_now.Hour] = _Stunde; //Stunden-Objekt soll auf eigenen Stundenarray überschrieben werden
+}
+
+```
+
