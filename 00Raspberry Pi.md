@@ -252,7 +252,7 @@ while (true)
 ![I2C_ohnePullup](/Grafiken/Raspberry_Pi/I2C_ohnePullup.jpeg)
 > Dies ist der PCF8574 Remote 8-Bit I/O Expander ohne Pullups. Diesen haben wir verwendet. 
 
-![I2C_mitPullups](/Grafiken/Raspberry_Pi/I2C_mitPullups.jpeg)
+![I2C_mitPullup](/Grafiken/Raspberry_Pi/I2C_mitPullup.jpeg)
 > Dies ist ein PCF8574 Remote 8-Bit I/O Expander mit integrierten Pullup wiederständen. Die verwendung dieser Variante ist bei einem Raspberry Pi nur mit Pegelwandler empfohlen. Der Arduino Uno als Beispiel könnte diese Variante ohne Probleme nutzen, da er keine internen Pullups wie der Raspberry Pi hat.
 
 
