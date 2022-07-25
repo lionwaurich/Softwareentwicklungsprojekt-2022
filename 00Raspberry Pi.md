@@ -101,6 +101,10 @@ dotnet add package Iot.Device.Bindings --version 2.1.0-*
 # Ansteuern der Sensoren 
 ![Raspberry Pi Anschluss (schematisch)](/Grafiken/Raspberry_Pi/Raspberry%20Pi%20Anschluss%20(schematisch).png)
 
+* Das folgende Bild soll den Gesamtaufbau als Steckplan zeigen. Die Verbindungen zum LCD Display dienen nur der Darstellung, da Fritzing kein 20x4 I2C LCD Display zur auswahl hatte. Die Pins entsprechen so der Belegung des PCF8574 Remote 8-Bit I/O Expander.
+
+![Gesamtaufbau](/Grafiken/Raspberry_Pi/Gesamtaufbau.png)
+
 * Sensormodelle
    * `MQ-135` (Luftqualitätssensor: Benzol, Alkohol, Rauch)
    * `AM2302` (Temperatur und Luftfeuchtigkeit)
