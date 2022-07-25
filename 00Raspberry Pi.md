@@ -248,12 +248,12 @@ while (true)
 ## 20x4 LCD Display
 
 * Wir nutzen ein 20x4 LCD Display, damit wir alle Daten direkt sichtbar haben. Ein 16x2 Display könnte jeweils nur Zwei Daten Anzeigen und müsste immer wechseln (oder es wird sehr unübersichtlich). Unser LCD Display besitzt einen PCF8574 Remote 8-Bit I/O Expander für I2C-Bus. Dieser ist dafür gedacht, dass man den LCD Display direkt mit dem Raspberry Pi verbinden kann und die Daten verarbeitet werden können.
-*  **Achtung**: Hierbei ist es wichtig zu beachten, dass es diesen I/O Expander mit und ohne integrierte Pullup wiederstände gibt. Die GPIOs des Raspberry vertragen nur die 3,3V Eingangsspannung, das 20x4 LCD-Display arbeitet jedoch auch mit 5V. Der PCF8574 Remote 8-Bit I/O Expander sorgt auch dafür, dass die GPIOs nur 3,3V abbekommen, lässt man die Pullup Wiederstände jedoch drinnen, kann es passieren, dass die GPIOs kurzzeitig mit 5V versorgt werden. Dies kann dazu führen, dass der Raspberry Pi zerstört wird. 
+*  **Achtung**: Hierbei ist es wichtig zu beachten, dass es diesen I/O Expander mit und ohne integrierte Pullup Widerstände gibt. Die GPIOs des Raspberry vertragen nur die 3,3V Eingangsspannung, das 20x4 LCD-Display arbeitet jedoch auch mit 5V. Der PCF8574 Remote 8-Bit I/O Expander sorgt auch dafür, dass die GPIOs nur 3,3V abbekommen, lässt man die Pullup Widerstände jedoch drinnen, kann es passieren, dass die GPIOs kurzzeitig mit 5V versorgt werden. Dies kann dazu führen, dass der Raspberry Pi zerstört wird. 
 
 ![I2C_ohnePullup](/Grafiken/Raspberry_Pi/I2C_ohnePullup.jpeg)
-> Dies ist der PCF8574 Remote 8-Bit I/O Expander ohne Pullups, welcher von uns verwendet wurde. 
+> Dies ist der PCF8574 Remote 8-Bit I/O Expander ohne Pullup Widerständen, welcher von uns verwendet wurde. 
 
 ![I2C_mitPullup](/Grafiken/Raspberry_Pi/I2C_mitPullup.jpeg)
-> Dies ist ein PCF8574 Remote 8-Bit I/O Expander mit integrierten Pullup wiederständen. Die verwendung dieser Variante ist bei einem Raspberry Pi nur mit Pegelwandler empfohlen. Der Arduino Uno als Beispiel könnte diese Variante ohne Probleme nutzen, da er keine internen Pullups wie der Raspberry Pi hat.
+> Dies ist ein PCF8574 Remote 8-Bit I/O Expander mit integrierten Pullup wiederständen. Die verwendung dieser Variante ist bei einem Raspberry Pi nur mit Pegelwandler empfohlen. Der Arduino Uno als Beispiel, könnte diese Variante ohne Probleme nutzen, da er keine internen Pullup Widerstände wie der Raspberry Pi hat.
 
 
