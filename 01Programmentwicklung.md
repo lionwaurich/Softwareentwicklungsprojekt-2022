@@ -371,4 +371,70 @@ public void save(int _stunde)
 ```    
 Die Methode überprüft die Uhrzeit und baut die Stringkette solange aus den einzelnen Stundenarrays auf bis das Ende des Tages erreicht wird. Wird dieses Erfasst so schließt die Methode die Stringkette mit einem "]" ab und speichert die Stringkette auf dem Pfad der txt-Datei auf dem Raspberry Pi.
     
-    
+## Main-Programm
+```csharp                                      Usage
+class Programm
+{
+    static void Main(string[] args)
+    {
+        DateTime now = DateTime.Now; //Aktuelle Uhrzeit und aktuelles Datum
+        stunden now_hour = new stunden(now.Hour, now.Minute); //Stunden-Objekt instanziiert
+        tag heute = new tag(now, new stunden(now.Hour, now.Minute)); //Tag-Objekt instanziiert
+
+        int Stunde = now.Hour; //Stunde auf aktuelle Stunde setzen
+        int minute = now.Minute; //minute auf aktuelle Minute setzen
+
+        //Enable für periodischen Prozess (While-Bedingung); WarmUp für erstmaliges hochfahren des Raspberry Pi
+        bool Enable = true, WarmUp = true;
+
+		double temperature = 0, humidity = 0, GasValue = 0; //Variablen auf 0 setzen
+
+        //Konfiguration für ADC-Modul
+        var hardwareSpiSettings = new SpiConnectionSettings(0,0);
+        using var spi = SpiDevice.Create(hardwareSpiSettings);
+
+        //Periodischer Prozess bis Abbruch erkannt wird
+        while(Enable == true)
+        {
+            using (Dht22 dht = new Dht22(4)) //AM2302-Sensor
+            using (Mcp3008 mcp = new Mcp3008(spi)) //ADC-Modul für Gassensor
+            
+            //Werte auf Fehler vergleichen, wenn keine Fehler, Werte für weiteren Prozess benutzen (CallByReference)
+            heute.Stunde[Stunde].compareValues(mcp, dht, ref temperature, ref humidity, ref GasValue, ref WarmUp);
+
+            //Gas-Qualität überprüfen
+            heute.Stunde[Stunde].GasAlert(GasValue);
+
+            //Uhrzeit aktualisieren
+            now = DateTime.Now;
+
+            //Ausgabe auf LCD-Bildschirm
+            heute.Stunde[Stunde].display(now, temperature, humidity, GasValue);
+
+            if(minute != now.Minute) //bei Minutenwechsel
+            {
+                minute = now.Minute; //Minute auf neue/aktuelle Zeit umändern
+
+                //Werte auf Minuten-Array schreiben, bei index = minute
+                heute.Stunde[Stunde].setValues(temperature, humidity, GasValue, minute);
+
+                //Wenn 60 Minuten erreicht sind, soll Durchschnittswert für Stunde ermittelt werden
+                if(minute == 0)
+                {
+                    if(heute.Stunde[Stunde].hour == 0) //Wenn 0 Uhr erreicht ist
+                    {
+                        heute.save(Stunde); //Endgültige txt-File erstellen
+
+                        heute = new tag(now, new stunden(now.Hour, now.Minute)); //neues Tag-Objekt instanziiert
+                    } 
+                    else heute.save(Stunde); //txt-File erstellen
+                    
+                    Stunde = now.Hour; //aktuelle Stunde übernehmen
+
+                    heute.Stunde[Stunde] = new stunden(now.Hour, now.Minute); //neues Stunden-Objekt instanziiert
+                }
+            }
+        }
+    }
+}
+```
