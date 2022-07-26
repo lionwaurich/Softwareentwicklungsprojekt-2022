@@ -12,7 +12,7 @@
 * [Herangehensweise an die Software des Respberry Pi's](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#herangehensweise-an-die-software-des-respberry-pis)
      * [Erstes Klassendiagramm](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#erstes-klassendiagramm)
      * [Endgültiges Klassendiagramm](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#endg%C3%BCltiges-klassendiagramm)
-* [Bibliotheken]()
+* [Bibliotheken](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#bibliotheken)
 * [CStunde](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#cstunde)
    * [Attribute](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#attribute)
    * [Methoden](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#methoden)
