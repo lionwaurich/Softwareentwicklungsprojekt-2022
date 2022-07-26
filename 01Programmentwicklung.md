@@ -35,7 +35,7 @@
 
 ## Herangehensweise an die Software des Respberry Pi's
 
-Die Software wird objektorientiert programmiert und und beinhaltet 2 Klassen. Die Klassen sind ```CStunden``` und ```CTag```, wobei ```CTag``` ein eindimensionales Array im Umfang von 24 von dem Datentyp ```CStunden``` einschließt. Somit muss ```CStunden``` eine Komposition von ```CTag``` sein wie man in folgender Grafik entnehmen kann.
+Die Software wird objektorientiert programmiert und und beinhaltet 2 Klassen. Die Klassen sind ```CStunde``` und ```CTag```, wobei ```CTag``` ein eindimensionales Array im Umfang von 24 von dem Datentyp ```CStunde``` einschließt. Somit muss ```CStunde``` eine Komposition von ```CTag``` sein wie man in folgender Grafik entnehmen kann.
 
 ## Erstes Klassendiagramm
 
@@ -65,7 +65,7 @@ Diese Bibliotheken wurden benutzt, um das Programm mit dem Raspberry Pi zu verkn
 
 ## CStunde
 
-Die Klasse ```CStunden``` ist für die aktuelle Ein-/Ausgabe von/auf den peripheren Komponenten auf dem Raspberry Pi zuständig,
+Die Klasse ```CStunde``` ist für die aktuelle Ein-/Ausgabe von/auf den peripheren Komponenten auf dem Raspberry Pi zuständig,
 diese erstellt für jedes Stundenobjekt die Durchschnittswerte der 3 Attribute Temperatur, Luftfeuchtigkeit und Gas-Qualität bei Anbruch der nächsten Stunde, und speichert diese in seiner übergeordneten Klasse ```CTag```.
 
 ### Attribute
