@@ -16,6 +16,8 @@ Luftfeuchtigkeit und die Luftqualität mittels eines Gas-Sensors. Die Ausgabe l�
 Das Programm wird objektorientiert in C-Sharp über zwei Klassen laufen. Die Sensordaten sollen im 6 Sekunden Takt erfasst und über den LCD-Display ausgegeben werden. Aus diesen Daten wird über jede Stunde der Durchschnitt berechnet und nach 24 Stunden sollen die Sensordaten in einer .txt Datei gespeichert werden. Steigt der Luftqualitätswert über eine kritische Grenze, soll ein optisches und akustisches Signal ausgegeben werden, dies erfolgt in zwei Stufen. 
 Die erste Alarmstufe wird ausgelöst, wenn der Luftqualitätswert über 35% "schlechte" Luft steigt, dabei leuchtet die RGB-LED gelb und der Buzzer gibt ein langsames akustisches Signal aus. Die zweite Alarmstufe wird ausgelöst, wenn dieser Wert über 50% steigt. Dann leuchtet die RGB-LED rot und die Frequenz des akustischen Signals wird erhöht. Dies soll Gefahrengrenzwerte signalisieren und und zum Verlassen des Raumes auffordern. 
 
+![Aufbau](/Grafiken/Raspberry_Aufbau/Aufbau.jpeg)
+
 
 # Verwendete Software
 
