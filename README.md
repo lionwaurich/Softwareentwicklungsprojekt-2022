@@ -16,8 +16,12 @@ Luftfeuchtigkeit und die Luftqualität mittels eines Gas-Sensors. Die Ausgabe l�
 Das Programm wird objektorientiert in C-Sharp über zwei Klassen laufen. Die Sensordaten sollen im 6 Sekunden Takt erfasst und über den LCD-Display ausgegeben werden. Aus diesen Daten wird über jede Stunde der Durchschnitt berechnet und nach 24 Stunden sollen die Sensordaten in einer .txt Datei gespeichert werden. Steigt der Luftqualitätswert über eine kritische Grenze, soll ein optisches und akustisches Signal ausgegeben werden, dies erfolgt in zwei Stufen. 
 Die erste Alarmstufe wird ausgelöst, wenn der Luftqualitätswert über 35% "schlechte" Luft steigt, dabei leuchtet die RGB-LED gelb und der Buzzer gibt ein langsames akustisches Signal aus. Die zweite Alarmstufe wird ausgelöst, wenn dieser Wert über 50% steigt. Dann leuchtet die RGB-LED rot und die Frequenz des akustischen Signals wird erhöht. Dies soll Gefahrengrenzwerte signalisieren und und zum Verlassen des Raumes auffordern. Das Programm finden sie [hier](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/Wetterstation_komplett/Wetterstation_komplett.cs). Das Programm wurde gemeinsam auf Visual Studio geschrieben, da wir immer die Funktionalität des Programmes auf dem Raspberry Pi testen mussten und Visual Studio Remote mit dem Raspberry Pi verbunden war. Andernfalls hätten wir das Programm zwar auf Github verändern können, jedoch hätten wir es nicht direkt testen können.
 
+* Das ist der Aufbau des Raspberry Pi mit angeschlossener Peripherie
 ![Aufbau](/Grafiken/Raspberry_Aufbau/Aufbau.jpeg)
 
+* Der erste Start des Programmes:
+
+![Start]()
 
 # Verwendete Software
 
