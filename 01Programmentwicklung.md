@@ -44,7 +44,21 @@ Das folgende Bild zeigt die Grundidee unserer Software für den Raspberry Pi, be
 
 Hier zu sehen ist das endgültige Klassendiagramm mit nur zwei Klassen, wobei CStunden nur noch den Durchschnitt der Rohdaten über die jeweilige Stunde in CTag speichert und CTag diese bei Alauf des Tages in eine txt-Datei speichert. Somit wird verhindert, dass die Werte über die Laufzeit lokal im Programm gespeichert werden und im Falle eines Ausfalls des Raspberry Pi's diese nicht verloren gehen. Zudem ist der Code somit auch übersichtlicher, da man ein Jahr genauso mit 365 Tagen realisieren kann ohne noch CWoche, CMonat und CJahr zu implementieren, wie man aus dem ersten Klassendiagramm entnehmen kann.
 
-<br/>
+## Bibliotheken
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+```csharp                                      Usage
+using System;
+using Iot.Device.DHTxx; //Sensor-Bibliothek
+using System.Device.Gpio; //Für angeschlossene Komponenten am GPIO
+using System.Device.I2c; //Für I2C-Schnittstellen-Erkennung
+using System.IO; //Für Dateien
+using System.Text; //Für Stringmanipulation
+using Iot.Device.CharacterLcd; //Bildschirmausgabe Geräterkennung für LCD (16x2/20x4)
+using Iot.Device.Pcx857x; //I2C Controller für LCD-Bildschirm
+using System.Device.Spi; //ADC-Bus
+using Iot.Device.Adc; //ADC-Modul-Bibliothek
+```
+Diese Bibliotheken wurden benutzt, um das Programm mit dem Raspberry Pi zu verknüpfen und seine Features nutzen, sowie überhaupt Daten erhalten zu können.
 
 ## CStunde
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -318,7 +332,7 @@ public stunden[] Stunde = new stunden[24]; //Stundenobjekte
 public String txt_file = ""; //Spätere txt-File-Kette
 public String File_Header = ""; //Header für txt-File
 ```
-Dies ist eine Auflistung der attribute von der Klasse CTag
+Hier eine Auflistung der Attribute von der Klasse CTag
 
 ### Methoden
 
