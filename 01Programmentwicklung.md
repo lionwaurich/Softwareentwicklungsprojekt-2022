@@ -109,12 +109,14 @@ public void display(DateTime _now, double _Temp, double _
                     backlightBrightness: 0.1f, 
                     readWritePin: 1, 
                     controller: new GpioController(PinNum
+                    
     //Ausgabe Arrays
     String[] Line = new String[4];
     Line [0] = " " + _now.ToString("d") + "   " + _now.To
     Line [1] = "Humidity: " + _Hum + " %";
     Line [2] = "Temperature: " + _Temp + " \u00DFC";
     Line [3] = "Gas Quality: " + _Gas + " %"; 
+    
     //Schleife für Bildschirmzeilenausgabe
     for(int i = 0; i < 4; i++)
     {
@@ -131,6 +133,7 @@ public void display(DateTime _now, double _Temp, double _
         //Zeile auf Display ausgaben
         lcd.Write(Line[i]);
     }
+    
     hour = _now.Hour; //Stunde aktualisieren
 }
 ```
