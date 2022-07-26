@@ -10,8 +10,9 @@
 ---------------------------------------------------------------------------------
 # Chronologie
 * [Herangehensweise an die Software des Respberry Pi's](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#herangehensweise-an-die-software-des-respberry-pis)
-* [CStunden]()
-
+       * [Erstes Klassendiagramm](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#erstes-klassendiagramm)
+       * [Endgültiges Klassendiagramm](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#endg%C3%BCltiges-klassendiagramm)
+* [CStunde]()
 ## Herangehensweise an die Software des Respberry Pi's
 
 Die Software wird objektorientiert programmiert und und beinhaltet 2 Klassen. Die Klassen sind CStunden und CTag, wobei CTag ein eindimensionales Array im Umfang von 24 von dem Datentyp CStunden einschließt. Somit muss CStunden eine Komposition von CTag sein wie man in folgender Grafik entnehmen kann.
