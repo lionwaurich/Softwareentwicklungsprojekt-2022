@@ -380,7 +380,7 @@ Die Methode überprüft die Uhrzeit und baut die Stringkette solange aus den ein
 #### **Aufbau der txt-Datei**
 ![txt-Datei-Bild](/Grafiken/Programm_Entwicklung/txt-Datei-Bild.png)
 
-Zu sehen ist hier der Aufbau der txt-Datei ab Beginn der Stunde der Programmlaufzeit. Hier kommt man zur txt-Datei.   
+Zu sehen ist hier der Aufbau der txt-Datei ab Beginn der Stunde der Programmlaufzeit. Hier kommt man zur [txt-Datei](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/Wetterstation_komplett/Wetterstation_Daten.txt).   
    
 ## Main-Programm
 ```csharp                                      Usage
