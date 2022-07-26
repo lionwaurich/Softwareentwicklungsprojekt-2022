@@ -311,6 +311,15 @@ Die Methode erstellt beim Aufruf eine Stringkette, welche die Durchschnittswerte
 ### CTag
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+### Atribute
+```csharp                                      Usage
+    public stunden[] Stunde = new stunden[24]; //Stundenobjekte
+public String txt_file = ""; //Spätere txt-File-Kette
+public String File_Header = ""; //Header für txt-File
+```
+
+### Methoden
+
 #### Überladener Konstruktor
 ```csharp                                      Usage
 public tag(DateTime _now, stunden _Stunde) //Überladener Constructor
