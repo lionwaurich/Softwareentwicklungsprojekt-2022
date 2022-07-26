@@ -1,6 +1,0 @@
-[ 25/07/2022:
-  bis 0 Uhr:
-  Zimmertemperatur: 26 °C
-  Luftfeuchtigkeit: 59 %
-  Gaskonzentration: 29 %
-]
