@@ -285,7 +285,9 @@ Die Methode sieht zwar kompliziert aus, doch sie dient jediglich zur Ausfilterun
 ```
 Die Methode erstellt beim Aufruf eine Stringkette, welche die Durchschnittswerte der laufenden Stunde beinhaltet.
 
-### CTag ###
+### CTag
+
+#### Überladener Konstruktor
 ```csharp                                      Usage
 
 public tag(DateTime _now, stunden _Stunde) //Überladener Constructor
