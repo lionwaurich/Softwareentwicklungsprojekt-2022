@@ -24,6 +24,7 @@
         * [Speicherung der Daten](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#speicherung-der-daten)
 * [CTag](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#ctag)
    * [Attribute](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#atribute)
+   * [Methoden](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#methoden-1)
 
 ## Herangehensweise an die Software des Respberry Pi's
 
