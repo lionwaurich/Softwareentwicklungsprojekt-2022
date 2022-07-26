@@ -43,7 +43,6 @@ Der überladene Konstruktor soll zu Beginn der Programmdurchführung die Startst
 Bei der Startminute ist es genauso, diese wird auch beim Programmstart erfasst, um später von dort aus den Durchschnitt der beschriebenen Arrays zu berechnen, ansonsten würden fehlerhafte Werte auftreten, die gegen 0 gehen, da die Arrays mit 0 initialisiert werden.
 
 ### Werte einsetzen
-
 ```csharp                                      Usage
 public void setValues(double _Temp, double _Hum, double _Gas, int index)
 {
