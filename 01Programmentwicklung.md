@@ -51,6 +51,7 @@ public void setValues(double _Temp, double _Hum, double _Gas, int index)
     Gas[index] = _Gas; //Gas auf Gas-Array mit Index speichern
 }
 ```
+Diese Methode wird benutzt, um das letzte Datum beim Minutenwechsel in das jeweilige Arrayobjekt mit der jeweiligen Minute als Index zu speichern, deswegen umfassen diese Kategorien Arrays mit einer Größe von 60, genauso viel wie eine Stunde an Minuten hat. Diese Minutenwerte werden später benutzt, um den Durchschnitt für diese Stunde zu berechnen.
 
 
 ### CTag ###
