@@ -22,6 +22,7 @@
         * [Warnhinweis](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#warnhinweis)
         * [Werte vergleichen](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#werte-vergleichen)
         * [Speicherung der Daten](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#speicherung-der-daten)
+        * [Ansicht der txt-Datei](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#aufbau-der-txt-datei)
 * [CTag](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#ctag)
    * [Attribute](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#attribute-1)
    * [Methoden](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#methoden-1)
