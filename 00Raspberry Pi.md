@@ -127,7 +127,7 @@ dotnet add package Iot.Device.Bindings --version 2.1.0-*
 
 ![AM2302](/Grafiken/Fritzing_Steckpläne/AM2302.png)
 
-* Mit dem Folgenden C# Code werden die Sensordaten ausgelesen. Das Programm sniped wird dann in das Main Programm Implementiert
+* Mit dem Folgenden C# Code werden die Sensordaten ausgelesen. Das Programmsniped wird dann in das Main Programm Implementiert
 
 
 ```csharp                                      Usage
@@ -146,10 +146,10 @@ while(true)
 
 ## Nutzung des MQ135 mithilfe des MCP3008 und Pgelwandlers
 
-* Der MQ135 ist ein Luftqualitätssensor, welcher die Daten als Analoges Signal ausgibt. Der Digitale ausgang gibt nur an, ob die Luftqualität "Gut" oder "schlecht" ist. Den Genauen Wert muss man Analog auslesen. Das Problem dabei ist, dass der Raspberry Pi keine internen ADC (Analog Digital Konverter) besitzt. Aus diesem Grund nutzen wir den MCP3008 als ADC, wodurch wir das Analoge Signal umwandeln und die genauen Daten nutzen können. Des Weiteren arbeitet der MQ135 mit 5V, die GPIOs des Raspberry Pi arbeiten jedoch mit 3,3V. Damit der Raspberry Pi nicht beschädigt wird nutzen wir einen Pegelwandler, welcher die 5V Eingangsspannung in 3,3V umwandelt.
+* Der MQ135 ist ein Luftqualitätssensor, welcher die Daten als Analoges Signal ausgibt. Der digitale Ausgang gibt nur an, ob die Luftqualität "Gut" oder "schlecht" ist. Den genauen Wert muss man Analog auslesen. Das Problem dabei ist, dass der Raspberry Pi keinen internen ADC (Analog Digital Konverter) besitzt. Aus diesem Grund nutzen wir den MCP3008 als ADC, wodurch wir das Analoge Signal umwandeln und die genauen Daten nutzen können. Des Weiteren arbeitet der MQ-135 mit 5V, die GPIOs des Raspberry Pi arbeiten jedoch mit 3,3V. Damit der Raspberry Pi nicht beschädigt wird nutzen wir einen Pegelwandler, welcher die 5V Eingangsspannung in 3,3V umwandelt.
 
 
-* Die Folgende Grafik zeigt den Steckplan der drei Komponenten. Leider hatten wir bei "Fritzing" (Software für den grafischen Aufbau von Schaltplänen und Steckplänen) nur den MQ-2 Gas Sensor zur verfügung. Da die Anschlüsse der Sensoren jedoch die Selben sind, nutzen wir diesen Sensor zur veranschaulichung. 
+* Die folgende Grafik zeigt den Steckplan der drei Komponenten. Leider hatten wir bei "Fritzing" (Software für den grafischen Aufbau von Schaltplänen und Steckplänen) nur den MQ-2 Gas Sensor zur verfügung. Da die Anschlüsse der Sensoren jedoch die gleich sind, nutzen wir diesen Sensor zur veranschaulichung. 
 
 
 ![MCP3008_Pegelwandler_MQ135](Grafiken/Fritzing_Steckpläne/MCP3008_Pegelwandler_MQ135.png)
@@ -173,12 +173,12 @@ while(true)
    * MISO (Master Input, Slave Output)
    * MOSI (Master Output, Slave Input)
    * CS   (Chip select)
-* Die Bezeichnungen auf den Sensoren können heute varrieren, weil viele Hersteller den "Master-Slave" namen nicht verwenden wollen. So können Beispielsweise SDI/SDO (Serial Data in/Serial Data Out) oder D_in/D_out (Data in/Data out) vorkommen. Die Arbeitsweise bleibt jedoch gleich. 
+* Die Bezeichnungen auf den Sensoren können heute varrieren, weil viele Hersteller den "Master-Slave" namen nicht verwenden wollen. So können beispielsweise SDI/SDO (Serial Data in/Serial Data Out) oder D_in/D_out (Data in/Data out) vorkommen. Die Arbeitsweise bleibt jedoch gleich. 
 
 
 ![MCP3008](/Grafiken/Raspberry_Pi/MCP3008.jpeg)
 
-* Verlötet wurde der MCP3008 ADC von uns und dann wie auf dem Steckplan angeschlossen. Der CH0 Anschluss des MCP3008 wurde mit dem LV3 des Pegelwandlers verbunden und der A0 Output des MQ-135 mit HV3 des Pegelwandlers. Jetzt konnten wir über den SPI-Bus die Analogen Daten des MQ-135 Auslesen.
+* Verlötet wurde der MCP3008 ADC von uns und dann wie auf dem Steckplan angeschlossen. Der CH0 Anschluss des MCP3008 wurde mit dem LV3 des Pegelwandlers verbunden und der A0 Output des MQ-135 mit HV3 des Pegelwandlers. Jetzt konnten wir über den SPI-Bus die analogen Daten des MQ-135 Auslesen.
 * Da die Daten über den ADC umgewandelt werden sprechen wir nicht den MQ-135 an, sondern den MCP3008. Folgendes Programm liest die Daten aus:
 
 ```csharp                                      Usage
@@ -206,13 +206,13 @@ using (Mcp3008 mcp = new Mcp3008(spi))
 
 ## Piezo Buzzer und RGB-LED
 
-* Wir haben diese Komponenten in einer Beschreibung Organisiert, weil es ein einfaches Toggeln der GPIO-Ausgänge ist. Als erstes muss der GPIO als Ausgang definiert werden, dann werden die Komponenten Angeschlossen. Dann kann man ein "High" Signal/Flag dem jeweiligen Pin Sendet und dieser Pegelt von 0 auf 1 und sendet die 3,3V Ausgangsspannung. 
+* Wir haben diese Komponenten in einer Beschreibung Organisiert, weil es ein einfaches toggeln der GPIO-Ausgänge ist. Als erstes muss der GPIO als Ausgang definiert werden, dann werden die Komponenten angeschlossen. Dann kann man ein "High" Signal/Flag dem jeweiligen Pin sendet und dieser pegelt von 0 auf 1 und sendet die 3,3V Ausgangsspannung. 
 
 ![RGB-LED und Buzzer](/Grafiken/Fritzing_Steckpläne/RGB-LED%20und%20Buzzer.png)
 
 * Die Komponenten sind zwar nicht die gleichen, jedoch sind die Anschlüsse gleich. Der Piezo Buzzer ist an 3,3V und GND angeschlossen, wenn GPIO(27) auf High gesetzt wird erzeugt er einen Ton. Wenn GPIO(27) auf Low gesetzt ist, dann bleibt der Buzzer aus. Bei der RGB-LED ist es anders, dort ist GPIO(22) mit Rot verbunden und GPIO(23) mit Grün. Aktiviert man GPIO(22) so leuchtet die LED Rot, aktiviert man GPIO(23) leuchtet sie Grün. Aktiviert man beide zusammen leuchtet die LED Gelb. so kann man die RGB-LED in verschiedenen Farben leuchten lassen.
 
-* Dies ist der Programm snippet, welches die RGB-LED Gelb Leuchten lässt. Wenn man nur einen GPIO aktivieren würde, dann würde die LED grün oder rot leuchten
+* Dies ist der Programmsniped, welches die RGB-LED Gelb Leuchten lässt. Wenn man nur einen GPIO aktivieren würde, dann würde die LED grün oder rot leuchten
 ```csharp                                      Usage
 using System;
 using System.Device.Gpio;
@@ -233,7 +233,7 @@ while (true)
 }
 ```
 
-* Hier wird ein Warn Signal durch Aktivieren und Deaktivieren des Buzzers(GPIO(27)) erzeugt
+* Hier wird ein Warnsignal durch Aktivieren und Deaktivieren des Buzzers(GPIO(27)) erzeugt
 ```csharp                                      Usage
 using System;
 using System.Device.Gpio;
