@@ -59,9 +59,9 @@ using System.Device.Spi; //ADC-Bus
 using Iot.Device.Adc; //ADC-Modul-Bibliothek
 ```
 Diese Bibliotheken wurden benutzt, um das Programm mit dem Raspberry Pi zu verknüpfen und seine Features nutzen, sowie überhaupt Daten erhalten zu können.
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ## CStunde
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Die Klasse CStunden ist für die aktuelle Ein-/Ausgabe von/auf den peripheren Komponenten auf dem Raspberry Pi zuständig,
 diese erstellt für jedes Stundenobjekt die Durchschnittswerte der 3 Attribute Temperatur, Luftfeuchtigkeit und Gas-Qualität bei Anbruch der nächsten Stunde, und speichert diese in seiner übergeordneten Klasse CTag.
 
@@ -321,9 +321,7 @@ public String save()
 ```
 Die Methode erstellt beim Aufruf eine Stringkette, welche die Durchschnittswerte der laufenden Stunde beinhaltet.
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### CTag
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## CTag
 
 ### Attribute
 ```csharp                                      Usage
