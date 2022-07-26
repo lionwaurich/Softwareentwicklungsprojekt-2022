@@ -27,3 +27,8 @@ Die erste Alarmstufe wird ausgelöst, wenn der Luftqualitätswert über 35% "sch
 * [RealVNC Viewer](https://www.realvnc.com/de/connect/download/viewer/)  (Remote zugriff auf den Raspberry Pi)
 * [Fritzing](https://fritzing.org/)        (für die Steckpläne)
 * [ClickCharts](https://www.nchsoftware.com/chart/de/index.html)     (für die Klassen Diagramme)
+
+# Quellen
+
+* [Raspberry Pi Forum](https://forum-raspberrypi.de/forum/)
+*
