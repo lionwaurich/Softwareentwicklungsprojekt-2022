@@ -188,11 +188,85 @@ Die Methode dient lediglich für die Erfassung eines zu hohen Gaswertes, steigt 
 
 <br/>
 
-#### Warnhinweis
+#### Werte vergleichen
 ```csharp                                      Usage
+    public void compareValues(Mcp3008 _mcp, Dht22 _dht22, ref double _Temp, ref double _Hum, ref double _Gas, ref bool _warmup)
+    {
+        if(_warmup)
+        {
+            //Konfiguration der Pins
+            int pinGreen = 23, pinBuzzer = 27;
+            using var controller = new GpioController();
+            controller.OpenPin(pinGreen, PinMode.Output);
+            controller.OpenPin(pinBuzzer, PinMode.Output);
 
+            //Konfiguration des LCD-Bildschirms
+            using I2cDevice i2c = I2cDevice.Create(new I2cConnectionSettings(1, 0x27));
+            using var driver = new Pcf8574(i2c);
+            using var lcd = new Lcd2004(registerSelectPin: 0, 
+                            enablePin: 2, 
+                            dataPins: new int[] { 4, 5, 6, 7 }, 
+                            backlightPin: 3, 
+                            backlightBrightness: 0.1f, 
+                            readWritePin: 1, 
+                            controller: new GpioController(PinNumberingScheme.Logical, driver));
+
+            //Ausgabe für Sensorenkalibrierung (4 Sekunden lang)
+            lcd.Write("  Das Geraet wird   Sensoren kalibriert hochgefahren und die");
+            Thread.Sleep(4000);
+            
+            //Solange der Raspberry hochfährt
+            while(_warmup)
+            {
+                //Überprüfung auf richtige Werte
+                if($"{_dht22.Temperature}" != "0 K")
+                {
+                    //Signal für erfolgreiches Hochfahren (Grüne LED leuchtet auf)
+                    controller.Write(pinGreen, PinValue.High); controller.Write(pinBuzzer, PinValue.High);
+                    Thread.Sleep(200); controller.Write(pinBuzzer, PinValue.Low);
+                    Thread.Sleep(200); controller.Write(pinBuzzer, PinValue.High);
+                    Thread.Sleep(200); controller.Write(pinBuzzer, PinValue.Low);
+
+                    //Bildschirmausgabe löschen
+                    lcd.Clear();
+
+                    //Ausgabe für erfolgreiches Hochfahren
+                    lcd.Write("                       Betriebsbereit      Das Geraet ist                       ");
+
+                    //Abbruch-Anweisung für Schleife
+                    break;
+                }
+            }
+        }
+
+        //Werte als String für Stringoperationen
+        String Text_Temp = $"{_dht22.Temperature}";
+        String Text_Hum = $"{_dht22.Humidity}";
+
+        if(Text_Temp != "0 K") //Vergleich auf falschen Sensorwert
+        {
+            //Wert soll aus String entnommen werden
+            Text_Temp = Text_Temp.Substring(0, Text_Temp.IndexOf(" °C"));
+            Text_Hum = Text_Hum.Substring(0, Text_Hum.IndexOf("%")-1);
+
+            //Wenn es keine größeren Differenzen zum vorherigen Wert gibt oder das Gerät am Hochfahren ist, dann ...
+            if (Math.Abs(_Hum-Convert.ToDouble(Text_Hum)) < 30 && Math.Abs(_Temp-Convert.ToDouble(Text_Temp)) < 5 || _warmup == true)
+            {
+                //... sollen die richtigen Werte übernommen werden
+                _Temp = Convert.ToDouble(Text_Temp);
+                _Hum = Convert.ToDouble(Text_Hum);
+
+                //Hochfahrprozess wird deaktiviert
+                _warmup = false;
+            }
+        }
+
+        //Gas-Wert wird gelesen, da dieser durchgehend richtige Werte ausgibt (Runden auf zwei Stellen nach Komma)
+        _Gas = Math.Round(_mcp.Read(0)/ 10.24,2); //Rohwert muss durch 1024 dividiert werden für korrekten Wert (für % und nicht ppm)
+
+    }
 ```
-
+Die Methode sieht zwar kompliziert aus, doch sie dient jediglich zur Ausfilterung von flaschen Sensordaten. Werden flasche Werte erfasst oder eine zu hohe Differenz zum vorherigen Wert erkannt, so wird der vorherige Wert übernommen. Wird ein richtiger Wert erfasst, so wird der Wert mittels ```CallByReference``` überschrieben. 
 
 ### CTag ###
 
