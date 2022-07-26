@@ -315,6 +315,9 @@ Die Methode erstellt beim Aufruf eine Stringkette, welche die Durchschnittswerte
 
 ### CTag
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<br/>
+
 ### Atribute
 ```csharp                                      Usage
 public stunden[] Stunde = new stunden[24]; //Stundenobjekte
@@ -322,6 +325,8 @@ public String txt_file = ""; //Spätere txt-File-Kette
 public String File_Header = ""; //Header für txt-File
 ```
 Dies ist eine Auflistung der attribute von der Klasse CTag
+
+<br/>
 
 ### Methoden
 
