@@ -30,6 +30,7 @@ Die Klasse CStunden ist für die aktuelle Ein-/Ausgabe von/auf den peripheren Ko
 diese erstellt für jedes Stundenobjekt die Durchschnittswerte der 3 Attribute Temperatur, Luftfeuchtigkeit und Gas-Qualität bei Anbruch der nächsten Stunde, und speichert diese in seiner übergeordneten Klasse CTag.
 
 CStunde umfasst 7 Methoden wobei eine davon ein überladener Konstruktor ist
+<br/>
 
 #### Überladener Konstruktor
 ```csharp                                      Usage
