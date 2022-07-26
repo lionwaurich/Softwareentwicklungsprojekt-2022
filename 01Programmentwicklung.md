@@ -44,7 +44,6 @@ Das folgende Bild zeigt die Grundidee unserer Software für den Raspberry Pi, be
 Hier zu sehen ist das endgültige Klassendiagramm mit nur zwei Klassen, wobei CStunden nur noch den Durchschnitt der Rohdaten über die jeweilige Stunde in CTag speichert und CTag diese bei Alauf des Tages in eine txt-Datei speichert. Somit wird verhindert, dass die Werte über die Laufzeit lokal im Programm gespeichert werden und im Falle eines Ausfalls des Raspberry Pi's diese nicht verloren gehen. Zudem ist der Code somit auch übersichtlicher, da man ein Jahr genauso mit 365 Tagen realisieren kann ohne noch CWoche, CMonat und CJahr zu implementieren, wie man aus dem ersten Klassendiagramm entnehmen kann.
 
 <br/>
-<br/>
 
 ## CStunde
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -68,7 +67,7 @@ Hier eine Auflistung der Attribute von der Klasse CStunden
 
 ### Methoden
 
-**#### Überladener Konstruktor**
+#### **Überladener Konstruktor**
 ```csharp                                      Usage
 public stunden(int _hour, int _min) //Überladener Constructor
 {
