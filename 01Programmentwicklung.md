@@ -97,10 +97,10 @@ Die Methode ```void Average()``` soll den Durchschnitt der Minutenarrays von Tem
 #### Displayausgabe
 
 ```csharp                                      Usage
-public void display(DateTime _now, double _Temp, double _
+public void display(DateTime _now, double _Temp, double _Hum, double _Gas)
 {   
     //Display konfigurieren
-    using I2cDevice i2c = I2cDevice.Create(new I2cConnect
+    using I2cDevice i2c = I2cDevice.Create(new I2cConnectionSettings(1, 0x27));
     using var driver = new Pcf8574(i2c);
     using var lcd = new Lcd2004(registerSelectPin: 0, 
                     enablePin: 2, 
@@ -108,11 +108,11 @@ public void display(DateTime _now, double _Temp, double _
                     backlightPin: 3, 
                     backlightBrightness: 0.1f, 
                     readWritePin: 1, 
-                    controller: new GpioController(PinNum
+                    controller: new GpioController(PinNumberingScheme.Logical, driver)); 
                     
     //Ausgabe Arrays
     String[] Line = new String[4];
-    Line [0] = " " + _now.ToString("d") + "   " + _now.To
+    Line [0] = " " + _now.ToString("d") + "   " + _now.ToString("HH:mm") + " ";
     Line [1] = "Humidity: " + _Hum + " %";
     Line [2] = "Temperature: " + _Temp + " \u00DFC";
     Line [3] = "Gas Quality: " + _Gas + " %"; 
@@ -120,14 +120,14 @@ public void display(DateTime _now, double _Temp, double _
     //Schleife für Bildschirmzeilenausgabe
     for(int i = 0; i < 4; i++)
     {
-        //Zeile hat begrenzten Platz für Zeichen, deshalb
+        //Zeile hat begrenzten Platz für Zeichen, deshalb wird der rest mit Leerzeichen gefüllt
         if(Line[i].Length <= 20)
         {   
-            //Part als Hilfsvariable für Leerzeichen als 
+            //Part als Hilfsvariable für Leerzeichen als Puffer
             String Part = "";
-            //Zeile hat begrenzten Platz für Zeichen, des
-            for(int j = 0; j < 20 - Line[i].Length; j++){
-            //Endglied mit dem Inhalt der Leerzeichen an 
+            //Zeile hat begrenzten Platz für Zeichen, deshalb wird der Rest mit der Anzahl an Leerzeichen gefüllt
+            for(int j = 0; j < 20 - Line[i].Length; j++){Part = Part + " ";}
+            //Endglied mit dem Inhalt der Leerzeichen an Ausgabezeile hängen
             Line[i] = Line[i] + Part;
         }
         //Zeile auf Display ausgaben
