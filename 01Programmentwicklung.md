@@ -31,6 +31,8 @@ diese erstellt für jedes Stundenobjekt die Durchschnittswerte der 3 Attribute T
 
 CStunde umfasst 7 Methoden wobei eine davon ein überladener Konstruktor ist.
 
+<br/>
+
 #### Überladener Konstruktor
 ```csharp                                      Usage
 public stunden(int _hour, int _min) //Überladener Constructor
@@ -54,6 +56,8 @@ public void setValues(double _Temp, double _Hum, double _Gas, int index)
 }
 ```
 Diese Methode wird benutzt, um das letzte Datum beim Minutenwechsel in das jeweilige Arrayobjekt mit der jeweiligen Minute als Index zu speichern, deswegen umfassen diese Kategorien Arrays mit einer Größe von 60, genauso viel wie eine Stunde an Minuten hat. Diese Minutenwerte werden später benutzt, um den Durchschnitt für diese Stunde zu berechnen.
+
+<br/>
 
 #### Durchschnitt bilden
 ```csharp                                      Usage
