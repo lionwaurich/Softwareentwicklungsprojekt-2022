@@ -326,6 +326,7 @@ Die Methode erstellt beim Aufruf eine Stringkette, welche die Durchschnittswerte
 
 #### **Aufbau der txt-Datei**
 ![txt-Datei-Bild](/Grafiken/Programm_Entwicklung/txt-Datei-Bild.png)
+
 Zu sehen ist hier der Aufbau der txt-Datei ab beginn der Stunde der Programmlaufzeit
 
 ## CTag
