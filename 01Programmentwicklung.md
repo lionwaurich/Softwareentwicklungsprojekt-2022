@@ -37,16 +37,16 @@ diese erstellt für jedes Stundenobjekt die Durchschnittswerte der 3 Attribute T
 
 ### Attribute
 ```csharp                                      Usage
-     //ATTRIBUTE
-     public int hour {get; set;} //hour um derzeitige Stunde als Stundenindex zu besitzen
-     public int start_min {get; set;}
-     private double[] Temp = new double[60]; //Temperatur-Array für jede Minute
-     private double[] Hum = new double[60]; //Humidity-Array für jede Minute
-     private double[] Gas = new double[60]; //Gas-Array für jede Minute
-     private double[] OutTemp = new double[60]; //Außentemperatur-Array für jede Minute
-     private int stdAveTemp = 0; //Durchschnitts-Temperatur
-     private int stdAveHum = 0; //Durchschnitts-Humidity
-     private int stdAveGas = 0; //Durchschnitts-Gas
+//ATTRIBUTE
+public int hour {get; set;} //hour um derzeitige Stunde als Stundenindex zu besitzen
+public int start_min {get; set;}
+private double[] Temp = new double[60]; //Temperatur-Array für jede Minute
+private double[] Hum = new double[60]; //Humidity-Array für jede Minute
+private double[] Gas = new double[60]; //Gas-Array für jede Minute
+private double[] OutTemp = new double[60]; //Außentemperatur-Array für jede Minute
+private int stdAveTemp = 0; //Durchschnitts-Temperatur
+private int stdAveHum = 0; //Durchschnitts-Humidity
+private int stdAveGas = 0; //Durchschnitts-Gas
 ```
 Hier eine Auflistung der Attribute von der Klasse CStunden
 
@@ -82,8 +82,8 @@ Diese Methode wird benutzt, um das letzte Datum beim Minutenwechsel in das jewei
 
 #### Durchschnitt bilden
 ```csharp                                      Usage
-  public void Average()
- {   
+public void Average()
+{   
      //Array für Werte, um diese als Strings zu verwenden
      double[][] Wert = new double[3][];
      Wert[0] = Temp;
@@ -109,7 +109,7 @@ Diese Methode wird benutzt, um das letzte Datum beim Minutenwechsel in das jewei
          //Summe Null setzen für nachfolgende Kategorien
          sum = 0;
      }
- }
+}
 ```
 Die Methode ```void Average()``` soll den Durchschnitt der Minutenarrays von Temperatur, Luftfeuchtigkeit und Gas-Qualität berechnen, deshalb wird ein Jagged-Array benutz um diese Arrays auf eine Dimension zu erweitern, um bei der neuen Dimension, die Kategorien auswählen zu können. Dies ist in den darunterliegenden Schleifen von großem nutzen, da die äußere Schleife, die zu bearbeitende Kategorie auswählt und die innere Schleife erstellt die Summe der Werte und abschließend den Mittelwert.
 
@@ -163,46 +163,45 @@ Die Methode ```void Display()``` soll lediglich die ganzen Werte auf dem LCD-Dis
 
 #### Warnhinweis
 ```csharp                                      Usage
-    public void GasAlert(double _Gas)
-    {
-        //Pinnbelegung der physischen Ausgabekomponenten
-        int pinBuzzer = 27, pinRed = 22, pinGreen = 23;
+public void GasAlert(double _Gas)
+{
+   //Pinnbelegung der physischen Ausgabekomponenten
+   int pinBuzzer = 27, pinRed = 22, pinGreen = 23;
 
-        //Konfigurierung
-        using var controller = new GpioController();
-        controller.OpenPin(pinBuzzer, PinMode.Output);
-        controller.OpenPin(pinRed, PinMode.Output);
-        controller.OpenPin(pinGreen, PinMode.Output);
+   //Konfigurierung
+   using var controller = new GpioController();
+   controller.OpenPin(pinBuzzer, PinMode.Output);
+   controller.OpenPin(pinRed, PinMode.Output);
+   controller.OpenPin(pinGreen, PinMode.Output);
 
-        if(_Gas >= 35) //Wenn Gaswert über bedrohliche Grenze steigt
-        {
-            if(_Gas >= 50) //Wenn Gaswert über kritische Grenze steigt
-            {   
-                //Buzzer und rote LED geben schnelles Signal aus (Ausgabefrequenz hoch)
-                for(int i = 0; i < 6; i++)
-                {
-                    Thread.Sleep(500); controller.Write(pinBuzzer, PinValue.High);
-                    controller.Write(pinRed, PinValue.High);
-                    Thread.Sleep(500); controller.Write(pinBuzzer, PinValue.Low);
-                    controller.Write(pinRed, PinValue.Low);  
-                }
-            }
-            else
-            {
-                //Buzzer und gelbe LED geben langsames Signal aus (Ausgabefrequenz niedrig)
-                for(int i = 0; i < 3; i++)
-                {
-                    Thread.Sleep(1000); controller.Write(pinBuzzer, PinValue.High);
-                    controller.Write(pinRed, PinValue.High); controller.Write(pinGreen, PinValue.High);
-                    Thread.Sleep(1000); controller.Write(pinBuzzer, PinValue.Low);
-                    controller.Write(pinRed, PinValue.Low); controller.Write(pinGreen, PinValue.Low);
-                }
-            }
-        }
-        else Thread.Sleep(6000); //Aktualiesierung nach 6 Sekunden, um Prozessor zu entlasten
+   if(_Gas >= 35) //Wenn Gaswert über bedrohliche Grenze steigt
+   {
+       if(_Gas >= 50) //Wenn Gaswert über kritische Grenze steigt
+       {   
+           //Buzzer und rote LED geben schnelles Signal aus (Ausgabefrequenz hoch)
+           for(int i = 0; i < 6; i++)
+           {
+               Thread.Sleep(500); controller.Write(pinBuzzer, PinValue.High);
+               controller.Write(pinRed, PinValue.High);
+               Thread.Sleep(500); controller.Write(pinBuzzer, PinValue.Low);
+               controller.Write(pinRed, PinValue.Low);  
+           }
+       }
+       else
+       {
+           //Buzzer und gelbe LED geben langsames Signal aus (Ausgabefrequenz niedrig)
+           for(int i = 0; i < 3; i++)
+           {
+               Thread.Sleep(1000); controller.Write(pinBuzzer, PinValue.High);
+               controller.Write(pinRed, PinValue.High); controller.Write(pinGreen, PinValue.High);
+               Thread.Sleep(1000); controller.Write(pinBuzzer, PinValue.Low);
+               controller.Write(pinRed, PinValue.Low); controller.Write(pinGreen, PinValue.Low);
+           }
+       }
+   }
+   else Thread.Sleep(6000); //Aktualiesierung nach 6 Sekunden, um Prozessor zu entlasten
 
-        controller.Write(pinGreen, PinValue.Low); //Grüne LED abschalten, bei erfolgreichem Hochfahren
-    }
+   controller.Write(pinGreen, PinValue.Low); //Grüne LED abschalten, bei erfolgreichem Hochfahren
 }
 ```
 Die Methode dient lediglich für die Erfassung eines zu hohen Gaswertes, steigt die Gas-Qualität über 35% so gibt die gelbe LED und der Buzzer ein langsames Signal aus, steigt die Gas-Qualität lediglich über die kritsche Grenze von 50% so leuchtet die rote LED auf und der Buzzer gibt ein schnelles Signal aus, dies soll zum Verlassen des Raumes auffordern. Die überprüfung des Gaswertes erfolgt aller 6 Sekunden, und wird kein bdrohlicher Gas-Wert erfasst so verweilt der Prozess 6 Sekunden lang in der ```else```-Anweisung, um den Prozessor nicht in hoher Frequenz arbeiten zu lassen, da eine Aktualisierung der Werte aller 6 Sekunden völlig ausreicht.
@@ -211,81 +210,81 @@ Die Methode dient lediglich für die Erfassung eines zu hohen Gaswertes, steigt 
 
 #### Werte vergleichen
 ```csharp                                      Usage
-    public void compareValues(Mcp3008 _mcp, Dht22 _dht22, ref double _Temp, ref double _Hum, ref double _Gas, ref bool _warmup)
-    {
-        if(_warmup)
-        {
-            //Konfiguration der Pins
-            int pinGreen = 23, pinBuzzer = 27;
-            using var controller = new GpioController();
-            controller.OpenPin(pinGreen, PinMode.Output);
-            controller.OpenPin(pinBuzzer, PinMode.Output);
+public void compareValues(Mcp3008 _mcp, Dht22 _dht22, ref double _Temp, ref double _Hum, ref double _Gas, ref bool _warmup)
+{
+   if(_warmup)
+   {
+       //Konfiguration der Pins
+       int pinGreen = 23, pinBuzzer = 27;
+       using var controller = new GpioController();
+       controller.OpenPin(pinGreen, PinMode.Output);
+       controller.OpenPin(pinBuzzer, PinMode.Output);
 
-            //Konfiguration des LCD-Bildschirms
-            using I2cDevice i2c = I2cDevice.Create(new I2cConnectionSettings(1, 0x27));
-            using var driver = new Pcf8574(i2c);
-            using var lcd = new Lcd2004(registerSelectPin: 0, 
-                            enablePin: 2, 
-                            dataPins: new int[] { 4, 5, 6, 7 }, 
-                            backlightPin: 3, 
-                            backlightBrightness: 0.1f, 
-                            readWritePin: 1, 
-                            controller: new GpioController(PinNumberingScheme.Logical, driver));
+       //Konfiguration des LCD-Bildschirms
+       using I2cDevice i2c = I2cDevice.Create(new I2cConnectionSettings(1, 0x27));
+       using var driver = new Pcf8574(i2c);
+       using var lcd = new Lcd2004(registerSelectPin: 0, 
+                       enablePin: 2, 
+                       dataPins: new int[] { 4, 5, 6, 7 }, 
+                       backlightPin: 3, 
+                       backlightBrightness: 0.1f, 
+                       readWritePin: 1, 
+                       controller: new GpioController(PinNumberingScheme.Logical, driver));
 
-            //Ausgabe für Sensorenkalibrierung (4 Sekunden lang)
-            lcd.Write("  Das Geraet wird   Sensoren kalibriert hochgefahren und die");
-            Thread.Sleep(4000);
-            
-            //Solange der Raspberry hochfährt
-            while(_warmup)
-            {
-                //Überprüfung auf richtige Werte
-                if($"{_dht22.Temperature}" != "0 K")
-                {
-                    //Signal für erfolgreiches Hochfahren (Grüne LED leuchtet auf)
-                    controller.Write(pinGreen, PinValue.High); controller.Write(pinBuzzer, PinValue.High);
-                    Thread.Sleep(200); controller.Write(pinBuzzer, PinValue.Low);
-                    Thread.Sleep(200); controller.Write(pinBuzzer, PinValue.High);
-                    Thread.Sleep(200); controller.Write(pinBuzzer, PinValue.Low);
+       //Ausgabe für Sensorenkalibrierung (4 Sekunden lang)
+       lcd.Write("  Das Geraet wird   Sensoren kalibriert hochgefahren und die");
+       Thread.Sleep(4000);
 
-                    //Bildschirmausgabe löschen
-                    lcd.Clear();
+       //Solange der Raspberry hochfährt
+       while(_warmup)
+       {
+           //Überprüfung auf richtige Werte
+           if($"{_dht22.Temperature}" != "0 K")
+           {
+               //Signal für erfolgreiches Hochfahren (Grüne LED leuchtet auf)
+               controller.Write(pinGreen, PinValue.High); controller.Write(pinBuzzer, PinValue.High);
+               Thread.Sleep(200); controller.Write(pinBuzzer, PinValue.Low);
+               Thread.Sleep(200); controller.Write(pinBuzzer, PinValue.High);
+               Thread.Sleep(200); controller.Write(pinBuzzer, PinValue.Low);
 
-                    //Ausgabe für erfolgreiches Hochfahren
-                    lcd.Write("                       Betriebsbereit      Das Geraet ist                       ");
+               //Bildschirmausgabe löschen
+               lcd.Clear();
 
-                    //Abbruch-Anweisung für Schleife
-                    break;
-                }
-            }
-        }
+               //Ausgabe für erfolgreiches Hochfahren
+               lcd.Write("                       Betriebsbereit      Das Geraet ist                       ");
 
-        //Werte als String für Stringoperationen
-        String Text_Temp = $"{_dht22.Temperature}";
-        String Text_Hum = $"{_dht22.Humidity}";
+               //Abbruch-Anweisung für Schleife
+               break;
+           }
+       }
+   }
 
-        if(Text_Temp != "0 K") //Vergleich auf falschen Sensorwert
-        {
-            //Wert soll aus String entnommen werden
-            Text_Temp = Text_Temp.Substring(0, Text_Temp.IndexOf(" °C"));
-            Text_Hum = Text_Hum.Substring(0, Text_Hum.IndexOf("%")-1);
+   //Werte als String für Stringoperationen
+   String Text_Temp = $"{_dht22.Temperature}";
+   String Text_Hum = $"{_dht22.Humidity}";
 
-            //Wenn es keine größeren Differenzen zum vorherigen Wert gibt oder das Gerät am Hochfahren ist, dann ...
-            if (Math.Abs(_Hum-Convert.ToDouble(Text_Hum)) < 30 && Math.Abs(_Temp-Convert.ToDouble(Text_Temp)) < 5 || _warmup == true)
-            {
-                //... sollen die richtigen Werte übernommen werden
-                _Temp = Convert.ToDouble(Text_Temp);
-                _Hum = Convert.ToDouble(Text_Hum);
+   if(Text_Temp != "0 K") //Vergleich auf falschen Sensorwert
+   {
+       //Wert soll aus String entnommen werden
+       Text_Temp = Text_Temp.Substring(0, Text_Temp.IndexOf(" °C"));
+       Text_Hum = Text_Hum.Substring(0, Text_Hum.IndexOf("%")-1);
 
-                //Hochfahrprozess wird deaktiviert
-                _warmup = false;
-            }
-        }
+       //Wenn es keine größeren Differenzen zum vorherigen Wert gibt oder das Gerät am Hochfahren ist, dann ...
+       if (Math.Abs(_Hum-Convert.ToDouble(Text_Hum)) < 30 && Math.Abs(_Temp-Convert.ToDouble(Text_Temp)) < 5 || _warmup == true)
+       {
+           //... sollen die richtigen Werte übernommen werden
+           _Temp = Convert.ToDouble(Text_Temp);
+           _Hum = Convert.ToDouble(Text_Hum);
 
-        //Gas-Wert wird gelesen, da dieser durchgehend richtige Werte ausgibt (Runden auf zwei Stellen nach Komma)
-        _Gas = Math.Round(_mcp.Read(0)/ 10.24,2); //Rohwert muss durch 1024 dividiert werden für korrekten Wert (für % und nicht ppm)
+           //Hochfahrprozess wird deaktiviert
+           _warmup = false;
+       }
+   }
 
-    }
+   //Gas-Wert wird gelesen, da dieser durchgehend richtige Werte ausgibt (Runden auf zwei Stellen nach Komma)
+   _Gas = Math.Round(_mcp.Read(0)/ 10.24,2); //Rohwert muss durch 1024 dividiert werden für korrekten Wert (für % und nicht ppm)
+
+}
 ```
 Die Methode sieht zwar kompliziert aus, doch sie dient jediglich zur Ausfilterung von flaschen Sensordaten. Werden flasche Werte erfasst oder eine zu hohe Differenz zum vorherigen Wert erkannt, so wird der vorherige Wert übernommen. Wird ein richtiger Wert erfasst, so wird der Wert mittels ```CallByReference``` überschrieben. 
 
@@ -293,16 +292,16 @@ Die Methode sieht zwar kompliziert aus, doch sie dient jediglich zur Ausfilterun
 
 #### Speicherung der Daten
 ```csharp                                      Usage
-    public String save()
-    {
-        Average(); //Durchschnitt der Werte erstellen
+public String save()
+{
+   Average(); //Durchschnitt der Werte erstellen
 
-        //Übergabe von fertigem txt-File-Fragment
-        return "  bis " + hour + " Uhr:\n" +
-        "  Zimmertemperatur: " + stdAveTemp + " °C\n" +
-        "  Luftfeuchtigkeit: " + stdAveHum + " %\n" +
-        "  Gaskonzentration: " + stdAveGas + " %\n";
-    }
+   //Übergabe von fertigem txt-File-Fragment
+   return "  bis " + hour + " Uhr:\n" +
+   "  Zimmertemperatur: " + stdAveTemp + " °C\n" +
+   "  Luftfeuchtigkeit: " + stdAveHum + " %\n" +
+   "  Gaskonzentration: " + stdAveGas + " %\n";
+}
 ```
 Die Methode erstellt beim Aufruf eine Stringkette, welche die Durchschnittswerte der laufenden Stunde beinhaltet.
 
@@ -329,31 +328,31 @@ Der überladene Konstruktor erstellt bei Instanzierung ein Header für die txt-D
 
 #### Speicherung der Daten in txt-Datei
 ```csharp                                      Usage
-    public void save(int _stunde)
-    {
-        if(Stunde[_stunde].hour != 0) //Solange es nicht O Uhr ist
-        {
-            //txt-File baut sich auf den gespeicherten txt-File-Fargmenten auf
-            txt_file = txt_file + Stunde[_stunde].save();  
-        }
-        else //Wenn O Uhr, wird Stundenzusammenfassung mit Abschlussklammer "]" versehen
-        {
-            //endgültige txt-File wird mit "]" beendet, für Übersichtlichkeit
-            txt_file = File_Header + txt_file + Stunde[_stunde].save() + "]";
+public void save(int _stunde)
+{
+   if(Stunde[_stunde].hour != 0) //Solange es nicht O Uhr ist
+   {
+       //txt-File baut sich auf den gespeicherten txt-File-Fargmenten auf
+       txt_file = txt_file + Stunde[_stunde].save();  
+   }
+   else //Wenn O Uhr, wird Stundenzusammenfassung mit Abschlussklammer "]" versehen
+   {
+       //endgültige txt-File wird mit "]" beendet, für Übersichtlichkeit
+       txt_file = File_Header + txt_file + Stunde[_stunde].save() + "]";
 
-            try //Txt-File erstellen und speichern
-            {
-                //Pfad für txt-Datei
-                StreamWriter sw = new StreamWriter(@"/home/pi/Wetterstation/Wetterstation_Daten.txt");
+       try //Txt-File erstellen und speichern
+       {
+           //Pfad für txt-Datei
+           StreamWriter sw = new StreamWriter(@"/home/pi/Wetterstation/Wetterstation_Daten.txt");
 
-                sw.WriteLine(txt_file); //Speichern der txt_File auf dem Pfad, mittels StreamWriter
+           sw.WriteLine(txt_file); //Speichern der txt_File auf dem Pfad, mittels StreamWriter
 
-                sw.Close(); //Speichern abbrechen
-            }
-            catch(Exception e){Console.WriteLine("Exception: " + e.Message);} //Ausgabe für Speichertransfer
-            finally{Console.WriteLine("Excecuting finally block.");} //Ausgabe für erfolgreichem Speichern
-        }
-    }
+           sw.Close(); //Speichern abbrechen
+       }
+       catch(Exception e){Console.WriteLine("Exception: " + e.Message);} //Ausgabe für Speichertransfer
+       finally{Console.WriteLine("Excecuting finally block.");} //Ausgabe für erfolgreichem Speichern
+   }
+}
 ```    
 Die Methode überprüft die Uhrzeit und baut die Stringkette solange aus den einzelnen Stundenarrays auf bis das Ende des Tages erreicht wird. Wird dieses Erfasst so schließt die Methode die Stringkette mit einem "]" ab und speichert die Stringkette auf dem Pfad der txt-Datei auf dem Raspberry Pi.
     
