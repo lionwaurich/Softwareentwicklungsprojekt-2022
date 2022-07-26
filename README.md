@@ -26,7 +26,7 @@ Die erste Alarmstufe wird ausgelöst, wenn der Luftqualitätswert über 35% "sch
 
 * Nachdem das System hochgefahren ist, leuchtet die LED grün und der Buzzer gibt ein akustisches Signal
 
-![hochgefahren]()
+![hochgefahren](/Grafiken/Raspberry_Aufbau/hochgefahren.jpeg)
 
 # Verwendete Software
 
