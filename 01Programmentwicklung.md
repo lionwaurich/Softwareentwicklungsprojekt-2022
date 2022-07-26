@@ -321,6 +321,8 @@ public String save()
 ```
 Die Methode erstellt beim Aufruf eine Stringkette, welche die Durchschnittswerte der laufenden Stunde beinhaltet.
 
+#### **Aufbau der txt-Datei**
+
 ## CTag
 
 ### Attribute
