@@ -22,12 +22,12 @@
         * [Warnhinweis](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#warnhinweis)
         * [Werte vergleichen](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#werte-vergleichen)
         * [Speicherung der Daten](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#speicherung-der-daten)
-        * [Ansicht der txt-Datei](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#aufbau-der-txt-datei)
 * [CTag](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#ctag)
    * [Attribute](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#attribute-1)
    * [Methoden](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#methoden-1)
         * [Überladener Konstruktor](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#%C3%BCberladener-konstruktor-1)
         * [Speicherung der Daten in txt-Datei](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#speicherung-der-daten-in-txt-datei)
+        * * [Ansicht der txt-Datei](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#aufbau-der-txt-datei)
 * [Main-Programm](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#main-programm)
 
 <br/>
@@ -324,11 +324,6 @@ public String save()
 ```
 Die Methode erstellt beim Aufruf eine Stringkette, welche die Durchschnittswerte der laufenden Stunde beinhaltet.
 
-#### **Aufbau der txt-Datei**
-![txt-Datei-Bild](/Grafiken/Programm_Entwicklung/txt-Datei-Bild.png)
-
-Zu sehen ist hier der Aufbau der txt-Datei ab beginn der Stunde der Programmlaufzeit
-
 ## CTag
 
 ### Attribute
@@ -380,8 +375,13 @@ public void save(int _stunde)
    }
 }
 ```    
-Die Methode überprüft die Uhrzeit und baut die Stringkette solange aus den einzelnen Stundenarrays auf bis das Ende des Tages erreicht wird. Wird dieses Erfasst so schließt die Methode die Stringkette mit einem "]" ab und speichert die Stringkette auf dem Pfad der txt-Datei auf dem Raspberry Pi.
-    
+Die Methode überprüft die Uhrzeit und baut die Stringkette solange aus den einzelnen Stundenarrays auf bis das Ende des Tages erreicht wird. Wird dieses Erfasst so schließt die Methode die Stringkette mit einem "]" ab und speichert die Stringkette auf dem Pfad der txt-Datei auf dem Raspberry Pi.  
+
+#### **Aufbau der txt-Datei**
+![txt-Datei-Bild](/Grafiken/Programm_Entwicklung/txt-Datei-Bild.png)
+
+Zu sehen ist hier der Aufbau der txt-Datei ab Beginn der Stunde der Programmlaufzeit.   
+   
 ## Main-Programm
 ```csharp                                      Usage
 class Programm
