@@ -2,7 +2,7 @@
 
 | Parameter                | Informationen                                                                                                                                                                          |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Veranstaltung**       | Projekt Softwareecntwicklung                                                                                                                                                           |
+| **Veranstaltung**       | Projekt Softwareentwicklung                                                                                                                                                           |
 | **Semester**               |   Sommersemester 2022                                                                                                                                                                                        |
 | **Hochschule**          | Technische Universität Bergakademie Freiberg                                                                                                                                                      
 | **Autoren**              | Lion Waurich (65695) / Caio Marcas Menz (66654)                            
