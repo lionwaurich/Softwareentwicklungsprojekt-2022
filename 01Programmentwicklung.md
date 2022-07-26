@@ -39,6 +39,7 @@ public stunden(int _hour, int _min) //Überladener Constructor
     start_min = _min; //Minute bei dem der Raspberry gestartet hat
 }
 ```
+Der überladene Konstruktor soll zu Beginn der Programmdurchführung die Startstunde erfassen, um diese als Startindex für das Stundenarray in CTag nutzen. Somit wird für eine spätere Methode ```void Average()```
 
 ### CTag ###
 
