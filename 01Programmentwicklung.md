@@ -299,3 +299,37 @@ public tag(DateTime _now, stunden _Stunde) //Überladener Constructor
 
 ```
 Der überladene Konstruktor erstellt bei Instanzierung ein Header für die txt-Datei mit dem aktuellen Datum, um die späteren Daten dem Datum zuordnen zu können. Zudem wird das Stundenobjekt übernommen und auf das Stundenarray mit der aktuellen Stunde als Index überschrieben. Somit baut sich mit jeder Stunde ein gefülltes Stunden Array auf.
+
+<br/>
+
+#### Speicherung der Daten in txt-Datei
+```csharp                                      Usage
+    public void save(int _stunde)
+    {
+        if(Stunde[_stunde].hour != 0) //Solange es nicht O Uhr ist
+        {
+            //txt-File baut sich auf den gespeicherten txt-File-Fargmenten auf
+            txt_file = txt_file + Stunde[_stunde].save();  
+        }
+        else //Wenn O Uhr, wird Stundenzusammenfassung mit Abschlussklammer "]" versehen
+        {
+            //endgültige txt-File wird mit "]" beendet, für Übersichtlichkeit
+            txt_file = File_Header + txt_file + Stunde[_stunde].save() + "]";
+
+            try //Txt-File erstellen und speichern
+            {
+                //Pfad für txt-Datei
+                StreamWriter sw = new StreamWriter(@"/home/pi/Wetterstation/Wetterstation_Daten.txt");
+
+                sw.WriteLine(txt_file); //Speichern der txt_File auf dem Pfad, mittels StreamWriter
+
+                sw.Close(); //Speichern abbrechen
+            }
+            catch(Exception e){Console.WriteLine("Exception: " + e.Message);} //Ausgabe für Speichertransfer
+            finally{Console.WriteLine("Excecuting finally block.");} //Ausgabe für erfolgreichem Speichern
+        }
+    }
+```    
+Die Methode überprüft die Uhrzeit und baut die Stringkette solange aus den einzelnen Stundenarrays auf bis das Ende des Tages erreicht wird. Wird dieses Erfasst so schließt die Methode die Stringkette mit einem "]" ab und speichert die Stringkette auf dem Pfad der txt-Datei auf dem Raspberry Pi.
+    
+    
