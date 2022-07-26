@@ -68,7 +68,7 @@ Hier eine Auflistung der Attribute von der Klasse CStunden
 
 ### Methoden
 
-#### Überladener Konstruktor
+**#### Überladener Konstruktor**
 ```csharp                                      Usage
 public stunden(int _hour, int _min) //Überladener Constructor
 {
