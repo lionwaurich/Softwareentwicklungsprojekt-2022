@@ -12,7 +12,9 @@
 
 ## Herangehensweise an die Software des Respberry Pi's ##
 
-Die Software wird objektorientiert programmiert und und beinhaltet 2 Klassen. Die Klassen sind CStunden und CTag, wobei CTag ein eindimensionales Array im Umfang von 24 und dem Datentyp CStunden enthält.
+Die Software wird objektorientiert programmiert und und beinhaltet 2 Klassen. Die Klassen sind CStunden und CTag, wobei CTag ein eindimensionales Array im Umfang von 24 von dem Datentyp CStunden einschließt. Somit muss CStunden eine Komposition von CTag sein wie man in folgender Grafik entnehmen kann.
+
+![Klassendiagramm]("")
 
 
 ### CStunde ###
