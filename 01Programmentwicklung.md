@@ -184,7 +184,15 @@ Die Methode ```void Display()``` soll lediglich die ganzen Werte auf dem LCD-Dis
     }
 }
 ```
-Die Methode dient lediglich für die Erfassung eines zu hohen Gaswertes, steigt die Gas-Qualität über 35% so gibt die gelbe LED und der Buzzer ein langsames Signal aus, steigt die Gas-Qualität lediglich über die kritsche Grenze von 50% so leuchtet die rote LED auf und der Buzzer gibt ein schnelles Signal aus, dies soll zum Verlassen des Raumes auffordern. Die überprüfung des Gaswertes erfolgt aller 6 Sekunden, und wird kein bdrohlicher Gas-Wert erfasst so verweilt der Prozess in der ```else```-Anweisung
+Die Methode dient lediglich für die Erfassung eines zu hohen Gaswertes, steigt die Gas-Qualität über 35% so gibt die gelbe LED und der Buzzer ein langsames Signal aus, steigt die Gas-Qualität lediglich über die kritsche Grenze von 50% so leuchtet die rote LED auf und der Buzzer gibt ein schnelles Signal aus, dies soll zum Verlassen des Raumes auffordern. Die überprüfung des Gaswertes erfolgt aller 6 Sekunden, und wird kein bdrohlicher Gas-Wert erfasst so verweilt der Prozess 6 Sekunden lang in der ```else```-Anweisung, um den Prozessor nicht in hoher Frequenz arbeiten zu lassen, da eine Aktualisierung der Werte aller 6 Sekunden völlig ausreicht.
+
+<br/>
+
+#### Warnhinweis
+```csharp                                      Usage
+
+```
+
 
 ### CTag ###
 
