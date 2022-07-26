@@ -53,6 +53,37 @@ public void setValues(double _Temp, double _Hum, double _Gas, int index)
 ```
 Diese Methode wird benutzt, um das letzte Datum beim Minutenwechsel in das jeweilige Arrayobjekt mit der jeweiligen Minute als Index zu speichern, deswegen umfassen diese Kategorien Arrays mit einer Größe von 60, genauso viel wie eine Stunde an Minuten hat. Diese Minutenwerte werden später benutzt, um den Durchschnitt für diese Stunde zu berechnen.
 
+#### Durchschnitt bilden
+```csharp                                      Usage
+ public void Average()
+ {   
+     //Array für Werte, um diese als Strings zu verwenden
+     double[][] Wert = new double[3][];
+     Wert[0] = Temp;
+     Wert[1] = Hum;
+     Wert[2] = Gas;
+     //sum als Variable für Summe und letzendlich Mittelwert
+     double sum = 0;
+     //Schleife für die 3 Kategorien Temperatur, Luftfeuchtigke
+     for(int j = 0; j < 3; j++)
+     {
+         //Schleife für die spezifischen Werte in den Kategorie
+         for(int i = ++start_min; i < 60; i++) sum = sum + Wert
+         //Mittelwert bilden in Abhängigkeit der Anfangsminute 
+         sum = sum/(60-start_min);
+         //Auswahl nach Kategorie
+         switch (j)
+         {
+             case 0: stdAveTemp = Convert.ToInt32(sum); break;
+             case 1: stdAveHum = Convert.ToInt32(sum); break;
+             case 2: stdAveGas = Convert.ToInt32(sum); break;
+         }
+         
+         //Summe Null setzen für nachfolgende Kategorien
+         sum = 0;
+     }
+ }
+```
 
 ### CTag ###
 
