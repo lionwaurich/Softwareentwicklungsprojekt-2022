@@ -213,7 +213,7 @@ class stunden
         {
             //Wert soll aus String entnommen werden
             Text_Temp = Text_Temp.Substring(0, Text_Temp.IndexOf(" °C"));
-            Text_Hum = Text_Hum.Substring(0, Text_Hum.IndexOf("%")-1)
+            Text_Hum = Text_Hum.Substring(0, Text_Hum.IndexOf("%")-1);
 
             //Wenn es keine größeren Differenzen zum vorherigen Wert gibt oder das Gerät am Hochfahren ist, dann ...
             if (Math.Abs(_Hum-Convert.ToDouble(Text_Hum)) < 30 && Math.Abs(_Temp-Convert.ToDouble(Text_Temp)) < 5 || _warmup == true)
