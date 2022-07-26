@@ -95,7 +95,6 @@ Die Methode ```void Average()``` soll den Durchschnitt der Minutenarrays von Tem
 <br/>
 
 #### Displayausgabe
-
 ```csharp                                      Usage
 public void display(DateTime _now, double _Temp, double _Hum, double _Gas)
 {   
@@ -138,6 +137,54 @@ public void display(DateTime _now, double _Temp, double _Hum, double _Gas)
 }
 ```
 Die Methode ```void Display()``` soll lediglich die ganzen Werte auf dem LCD-Display ausgeben. Dieser wird am Anfang der Merhode kofiguriert und Hilfsarrays ```String[] Line = new String[4]``` erstellt, um für die erste Zeile das Datum und die Uhrzeit, und die letzten Zeilen für Temperatur, Luftfeuchtigkeit und Gas-Qualität auszugeben. Die Zeilen für den LCD-Bildschirm umfassen eine bestimmte Anzahl an Zeichen, weshalb die String Arrays ```Line[]``` mittels Stringoperationen benutzt werden müssen. mit der String Methode ```Length()``` wird die Länge des Inhalts des Stringarrayobjektes erfasst und der Rest mit Leerzeichen in ```Part``` gespeichert, um die Zeile vollauszuschöpfen, da sonst ungewollte Zeilenumbrüche auf dem LCD-Display zu sehen wären. Nach erfolgreichem Bearbeiten der ```Line[]``` wird dieses am Ende der Schleife aufbauend auf dem Bildschirm ausgegeben. Am Ende der Methode wird die Stunde immer wieder aktualisiert, um es dem richtigen Stundenobjekt zuzuordnen.
+
+<br/>
+
+#### Warnhinweis
+```csharp                                      Usage
+    public void GasAlert(double _Gas)
+    {
+        //Pinnbelegung der physischen Ausgabekomponenten
+        int pinBuzzer = 27, pinRed = 22, pinGreen = 23;
+
+        //Konfigurierung
+        using var controller = new GpioController();
+        controller.OpenPin(pinBuzzer, PinMode.Output);
+        controller.OpenPin(pinRed, PinMode.Output);
+        controller.OpenPin(pinGreen, PinMode.Output);
+
+        if(_Gas >= 35) //Wenn Gaswert über bedrohliche Grenze steigt
+        {
+            if(_Gas >= 50) //Wenn Gaswert über kritische Grenze steigt
+            {   
+                //Buzzer und rote LED geben schnelles Signal aus (Ausgabefrequenz hoch)
+                for(int i = 0; i < 6; i++)
+                {
+                    Thread.Sleep(500); controller.Write(pinBuzzer, PinValue.High);
+                    controller.Write(pinRed, PinValue.High);
+                    Thread.Sleep(500); controller.Write(pinBuzzer, PinValue.Low);
+                    controller.Write(pinRed, PinValue.Low);  
+                }
+            }
+            else
+            {
+                //Buzzer und gelbe LED geben langsames Signal aus (Ausgabefrequenz niedrig)
+                for(int i = 0; i < 3; i++)
+                {
+                    Thread.Sleep(1000); controller.Write(pinBuzzer, PinValue.High);
+                    controller.Write(pinRed, PinValue.High); controller.Write(pinGreen, PinValue.High);
+                    Thread.Sleep(1000); controller.Write(pinBuzzer, PinValue.Low);
+                    controller.Write(pinRed, PinValue.Low); controller.Write(pinGreen, PinValue.Low);
+                }
+            }
+        }
+        else Thread.Sleep(6000); //Aktualiesierung nach 6 Sekunden, um Prozessor zu entlasten
+
+        controller.Write(pinGreen, PinValue.Low); //Grüne LED abschalten, bei erfolgreichem Hochfahren
+    }
+}
+```
+Die Methode dient lediglich für die Erfassung eines zu hohen Gaswertes, steigt die Gas-Qualität über 35% so gibt die gelbe LED und der Buzzer ein langsames Signal aus, steigt die Gas-Qualität lediglich über die kritsche Grenze von 50% so leuchtet die rote LED auf und der Buzzer gibt ein schnelles Signal aus, dies soll zum Verlassen des Raumes auffordern. Die überprüfung des Gaswertes erfolgt aller 6 Sekunden, und wird kein bdrohlicher Gas-Wert erfasst so verweilt der Prozess in der ```else```-Anweisung
 
 ### CTag ###
 
