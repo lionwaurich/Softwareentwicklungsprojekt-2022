@@ -18,7 +18,7 @@ Erstes Klassendiagramm
 
 ![Klassendiagramm](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/Grafiken/Programm_Entwicklung/erstes_Klassendiagramm.png)
 
-Das folgende Bild zeigt die Grundidee unserer Software für den Raspberry Pi, bei dem 4
+Das folgende Bild zeigt die Grundidee unserer Software für den Raspberry Pi, bei dem % Klassen inkludiert sind wobei die Klasse CJahr die übergeordnete Klasse von allen ist. Die untergeordneten Klassen sind jeweils Kompositionen der nächst übergeordneten Klasse.
 
 ### CStunde ###
 Die Klasse CStunden ist für die aktuelle Ein-/Ausgabe von/auf den peripheren Komponenten auf dem Raspberry Pi zuständig,
