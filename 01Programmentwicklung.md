@@ -61,7 +61,7 @@ Diese Methode wird benutzt, um das letzte Datum beim Minutenwechsel in das jewei
 
 #### Durchschnitt bilden
 ```csharp                                      Usage
- public void Average()
+  public void Average()
  {   
      //Array für Werte, um diese als Strings zu verwenden
      double[][] Wert = new double[3][];
@@ -70,11 +70,11 @@ Diese Methode wird benutzt, um das letzte Datum beim Minutenwechsel in das jewei
      Wert[2] = Gas;
      //sum als Variable für Summe und letzendlich Mittelwert
      double sum = 0;
-     //Schleife für die 3 Kategorien Temperatur, Luftfeuchtigke
+     //Schleife für die 3 Kategorien Temperatur, Luftfeuchtigkeit und Gas-Qualität
      for(int j = 0; j < 3; j++)
      {
-         //Schleife für die spezifischen Werte in den Kategorie
-         for(int i = ++start_min; i < 60; i++) sum = sum + Wert
+         //Schleife für die spezifischen Werte in den Kategorien, um Mittelwert zu bilden
+         for(int i = ++start_min; i < 60; i++) sum = sum + Wert[j][i];
          //Mittelwert bilden in Abhängigkeit der Anfangsminute 
          sum = sum/(60-start_min);
          //Auswahl nach Kategorie
@@ -89,6 +89,7 @@ Diese Methode wird benutzt, um das letzte Datum beim Minutenwechsel in das jewei
          sum = 0;
      }
  }
+ public void display(DateTime _now, double _Temp, double _Hum, double _Gas)
 ```
 Die Methode ```void Average()``` soll den Durchschnitt der Minutenarrays von Temperatur, Luftfeuchtigkeit und Gas-Qualität berechnen, deshalb wird ein Jagged-Array benutz um diese Arrays auf eine Dimension zu erweitern, um bei der neuen Dimension, die Kategorien auswählen zu können. Dies ist in den darunterliegenden Schleifen von großem nutzen, da die äußere Schleife, die zu bearbeitende Kategorie auswählt und die innere Schleife erstellt die Summe der Werte und abschließend den Mittelwert.
 
