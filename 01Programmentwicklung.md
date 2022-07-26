@@ -28,12 +28,14 @@ Hier zu sehen ist das endgültige Klassendiagramm mit nur zwei Klassen, wobei CS
 <br/>
 <br/>
 
-### CStunde
+## CStunde
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Die Klasse CStunden ist für die aktuelle Ein-/Ausgabe von/auf den peripheren Komponenten auf dem Raspberry Pi zuständig,
 diese erstellt für jedes Stundenobjekt die Durchschnittswerte der 3 Attribute Temperatur, Luftfeuchtigkeit und Gas-Qualität bei Anbruch der nächsten Stunde, und speichert diese in seiner übergeordneten Klasse CTag.
 
-#### Attribute
+<br/>
+
+### Attribute
 ```csharp                                      Usage
      //ATTRIBUTE
      public int hour {get; set;} //hour um derzeitige Stunde als Stundenindex zu besitzen
@@ -49,6 +51,8 @@ diese erstellt für jedes Stundenobjekt die Durchschnittswerte der 3 Attribute T
 Hier eine Auflistung der Attribute von der Klasse CStunden
 
 <br/>
+
+### Methoden
 
 #### Überladener Konstruktor
 ```csharp                                      Usage
