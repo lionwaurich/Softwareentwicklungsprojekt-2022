@@ -311,8 +311,6 @@ Die Methode erstellt beim Aufruf eine Stringkette, welche die Durchschnittswerte
 ### CTag
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-<br/>
-
 #### Überladener Konstruktor
 ```csharp                                      Usage
 public tag(DateTime _now, stunden _Stunde) //Überladener Constructor
@@ -323,8 +321,6 @@ public tag(DateTime _now, stunden _Stunde) //Überladener Constructor
 
 ```
 Der überladene Konstruktor erstellt bei Instanzierung ein Header für die txt-Datei mit dem aktuellen Datum, um die späteren Daten dem Datum zuordnen zu können. Zudem wird das Stundenobjekt übernommen und auf das Stundenarray mit der aktuellen Stunde als Index überschrieben. Somit baut sich mit jeder Stunde ein gefülltes Stunden Array auf.
-
-<br/>
 
 #### Speicherung der Daten in txt-Datei
 ```csharp                                      Usage
