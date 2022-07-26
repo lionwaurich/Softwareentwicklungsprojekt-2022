@@ -96,6 +96,46 @@ Die Methode ```void Average()``` soll den Durchschnitt der Minutenarrays von Tem
 
 ####
 
+```csharp                                      Usage
+public void display(DateTime _now, double _Temp, double _
+{   
+    //Display konfigurieren
+    using I2cDevice i2c = I2cDevice.Create(new I2cConnect
+    using var driver = new Pcf8574(i2c);
+    using var lcd = new Lcd2004(registerSelectPin: 0, 
+                    enablePin: 2, 
+                    dataPins: new int[] { 4, 5, 6, 7 }, 
+                    backlightPin: 3, 
+                    backlightBrightness: 0.1f, 
+                    readWritePin: 1, 
+                    controller: new GpioController(PinNum
+    //Ausgabe Arrays
+    String[] Line = new String[4];
+    Line [0] = " " + _now.ToString("d") + "   " + _now.To
+    Line [1] = "Humidity: " + _Hum + " %";
+    Line [2] = "Temperature: " + _Temp + " \u00DFC";
+    Line [3] = "Gas Quality: " + _Gas + " %"; 
+    //Schleife für Bildschirmzeilenausgabe
+    for(int i = 0; i < 4; i++)
+    {
+        //Zeile hat begrenzten Platz für Zeichen, deshalb
+        if(Line[i].Length <= 20)
+        {   
+            //Part als Hilfsvariable für Leerzeichen als 
+            String Part = "";
+            //Zeile hat begrenzten Platz für Zeichen, des
+            for(int j = 0; j < 20 - Line[i].Length; j++){
+            //Endglied mit dem Inhalt der Leerzeichen an 
+            Line[i] = Line[i] + Part;
+        }
+        //Zeile auf Display ausgaben
+        lcd.Write(Line[i]);
+    }
+    hour = _now.Hour; //Stunde aktualisieren
+}
+```
+Die Methode ```void Display()``` soll lediglich die ganzen Werte auf dem LCD-Display ausgeben. Dieser wird am Anfang der Merhode kofiguriert und Hilfsarrays ```String[] Line = new String[4]``` erstellt, um für die erste Zeile das Datum und die Uhrzeit, und die letzten Zeilen für Temperatur, Luftfeuchtigkeit und Gas-Qualität auszugeben. Die Zeilen für den LCD-Bildschirm umfassen eine bestimmte Anzahl an Zeichen, weshalb die String Arrays ```Line[]``` mittels Stringoperationen benutzt werden müssen. mit der String Methode ```Length()``` wird die Länge des Inhalts des Stringarrayobjektes erfasst und der Rest mit Leerzeichen in ```Part``` gespeichert, um die Zeile vollauszuschöpfen, da sonst ungewollte Zeilenumbrüche auf dem LCD-Display zu sehen wären. Nach erfolgreichem Bearbeiten der ```Line[]``` wird dieses am Ende der Schleife aufbauend auf dem Bildschirm ausgegeben. Am Ende der Methode wird die Stunde immer wieder aktualisiert, um es dem richtigen Stundenobjekt zuzuordnen.
+
 ### CTag ###
 
 
