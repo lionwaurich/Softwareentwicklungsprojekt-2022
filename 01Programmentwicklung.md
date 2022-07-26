@@ -59,7 +59,7 @@ using System.Device.Spi; //ADC-Bus
 using Iot.Device.Adc; //ADC-Modul-Bibliothek
 ```
 Diese Bibliotheken wurden benutzt, um das Programm mit dem Raspberry Pi zu verknüpfen und seine Features nutzen, sowie überhaupt Daten erhalten zu können.
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## CStunde
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Die Klasse CStunden ist für die aktuelle Ein-/Ausgabe von/auf den peripheren Komponenten auf dem Raspberry Pi zuständig,
@@ -321,8 +321,7 @@ public String save()
 ```
 Die Methode erstellt beim Aufruf eine Stringkette, welche die Durchschnittswerte der laufenden Stunde beinhaltet.
 
-<br/>
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### CTag
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
