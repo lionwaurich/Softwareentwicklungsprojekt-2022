@@ -29,8 +29,12 @@ Die erste Alarmstufe wird ausgelöst, wenn der Luftqualitätswert über 35% "sch
 ![hochgefahren](/Grafiken/Raspberry_Aufbau/hochgefahren.jpeg)
 
 * Jetzt sind alle Sensoren betriebsbereit und die Daten können dem LCD Display entnommen werden
+* Video des eines simulierten Gas Alarms gibt es [hier](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/Grafiken/AlarmVideo.mp4)
 
 ![Ausgabe](/Grafiken/Raspberry_Aufbau/Ausgabe.jpeg)
+
+<br/>
+
 # Verwendete Software
 
 * [Visual Studio](https://code.visualstudio.com/?wt.mc_id=DX_841432)
