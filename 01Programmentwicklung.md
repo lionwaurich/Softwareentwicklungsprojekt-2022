@@ -30,6 +30,8 @@
         * [Speicherung der Daten in txt-Datei](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#speicherung-der-daten-in-txt-datei)
 * [Main-Programm](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#main-programm)
 
+<br/>
+
 ## Herangehensweise an die Software des Respberry Pi's
 
 Die Software wird objektorientiert programmiert und und beinhaltet 2 Klassen. Die Klassen sind ```CStunden``` und ```CTag```, wobei ```CTag``` ein eindimensionales Array im Umfang von 24 von dem Datentyp ```CStunden``` einschließt. Somit muss ```CStunden``` eine Komposition von ```CTag``` sein wie man in folgender Grafik entnehmen kann.
@@ -324,6 +326,7 @@ Die Methode erstellt beim Aufruf eine Stringkette, welche die Durchschnittswerte
 
 #### **Aufbau der txt-Datei**
 ![txt-Datei-Bild](/Grafiken/Programm_Entwicklung/txt-Datei-Bild.png)
+Zu sehen ist hier der Aufbau der txt-Datei ab beginn der Stunde der Programmlaufzeit
 
 ## CTag
 
