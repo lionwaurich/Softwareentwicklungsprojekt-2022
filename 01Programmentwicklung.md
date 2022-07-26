@@ -23,7 +23,7 @@
         * [Werte vergleichen](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#werte-vergleichen)
         * [Speicherung der Daten](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#speicherung-der-daten)
 * [CTag](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#ctag)
-   * [Attribute](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#atribute)
+   * [Attribute](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#attribute)
    * [Methoden](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#methoden-1)
         * [Überladener Konstruktor](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#%C3%BCberladener-konstruktor-1)
         * [Speicherung der Daten in txt-Datei](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#speicherung-der-daten-in-txt-datei)
@@ -318,7 +318,7 @@ Die Methode erstellt beim Aufruf eine Stringkette, welche die Durchschnittswerte
 
 <br/>
 
-### Atribute
+### Attribute
 ```csharp                                      Usage
 public stunden[] Stunde = new stunden[24]; //Stundenobjekte
 public String txt_file = ""; //Spätere txt-File-Kette
