@@ -23,6 +23,7 @@
         * [Werte vergleichen](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#werte-vergleichen)
         * [Speicherung der Daten](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#speicherung-der-daten)
 * [CTag](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#ctag)
+   * [Attribute](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#atribute)
 
 ## Herangehensweise an die Software des Respberry Pi's
 
