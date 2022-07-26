@@ -78,7 +78,7 @@ public stunden(int _hour, int _min) //Überladener Constructor
 Der überladene Konstruktor soll zu Beginn der Programmdurchführung die Startstunde erfassen, um diese als Startindex für das Stundenarray in CTag nutzen. Somit wird der Stundenbeginn für eine spätere Methode ```void Average()``` von großem Nutzen sein.
 Bei der Startminute ist es genauso, diese wird auch beim Programmstart erfasst, um später von dort aus den Durchschnitt der beschriebenen Arrays zu berechnen, ansonsten würden fehlerhafte Werte auftreten, die gegen 0 gehen, da die Arrays mit 0 initialisiert werden.
 
-#### Werte einsetzen
+#### **Werte einsetzen**
 ```csharp                                      Usage
 public void setValues(double _Temp, double _Hum, double _Gas, int index)
 {
@@ -89,7 +89,7 @@ public void setValues(double _Temp, double _Hum, double _Gas, int index)
 ```
 Diese Methode wird benutzt, um das letzte Datum beim Minutenwechsel in das jeweilige Arrayobjekt mit der jeweiligen Minute als Index zu speichern, deswegen umfassen diese Kategorien Arrays mit einer Größe von 60, genauso viel wie eine Stunde an Minuten hat. Diese Minutenwerte werden später benutzt, um den Durchschnitt für diese Stunde zu berechnen.
 
-#### Durchschnitt bilden
+#### **Durchschnitt bilden**
 ```csharp                                      Usage
 public void Average()
 {   
@@ -122,7 +122,7 @@ public void Average()
 ```
 Die Methode ```void Average()``` soll den Durchschnitt der Minutenarrays von Temperatur, Luftfeuchtigkeit und Gas-Qualität berechnen, deshalb wird ein Jagged-Array benutz um diese Arrays auf eine Dimension zu erweitern, um bei der neuen Dimension, die Kategorien auswählen zu können. Dies ist in den darunterliegenden Schleifen von großem nutzen, da die äußere Schleife, die zu bearbeitende Kategorie auswählt und die innere Schleife erstellt die Summe der Werte und abschließend den Mittelwert.
 
-#### Displayausgabe
+#### **Displayausgabe**
 ```csharp                                      Usage
 public void display(DateTime _now, double _Temp, double _Hum, double _Gas)
 {   
@@ -166,7 +166,7 @@ public void display(DateTime _now, double _Temp, double _Hum, double _Gas)
 ```
 Die Methode ```void Display()``` soll lediglich die ganzen Werte auf dem LCD-Display ausgeben. Dieser wird am Anfang der Merhode kofiguriert und Hilfsarrays ```String[] Line = new String[4]``` erstellt, um für die erste Zeile das Datum und die Uhrzeit, und die letzten Zeilen für Temperatur, Luftfeuchtigkeit und Gas-Qualität auszugeben. Die Zeilen für den LCD-Bildschirm umfassen eine bestimmte Anzahl an Zeichen, weshalb die String Arrays ```Line[]``` mittels Stringoperationen benutzt werden müssen. mit der String Methode ```Length()``` wird die Länge des Inhalts des Stringarrayobjektes erfasst und der Rest mit Leerzeichen in ```Part``` gespeichert, um die Zeile vollauszuschöpfen, da sonst ungewollte Zeilenumbrüche auf dem LCD-Display zu sehen wären. Nach erfolgreichem Bearbeiten der ```Line[]``` wird dieses am Ende der Schleife aufbauend auf dem Bildschirm ausgegeben. Am Ende der Methode wird die Stunde immer wieder aktualisiert, um es dem richtigen Stundenobjekt zuzuordnen.
 
-#### Warnhinweis
+#### **Warnhinweis**
 ```csharp                                      Usage
 public void GasAlert(double _Gas)
 {
@@ -211,7 +211,7 @@ public void GasAlert(double _Gas)
 ```
 Die Methode dient lediglich für die Erfassung eines zu hohen Gaswertes, steigt die Gas-Qualität über 35% so gibt die gelbe LED und der Buzzer ein langsames Signal aus, steigt die Gas-Qualität lediglich über die kritsche Grenze von 50% so leuchtet die rote LED auf und der Buzzer gibt ein schnelles Signal aus, dies soll zum Verlassen des Raumes auffordern. Die überprüfung des Gaswertes erfolgt aller 6 Sekunden, und wird kein bdrohlicher Gas-Wert erfasst so verweilt der Prozess 6 Sekunden lang in der ```else```-Anweisung, um den Prozessor nicht in hoher Frequenz arbeiten zu lassen, da eine Aktualisierung der Werte aller 6 Sekunden völlig ausreicht.
 
-#### Werte vergleichen
+#### **Werte vergleichen**
 ```csharp                                      Usage
 public void compareValues(Mcp3008 _mcp, Dht22 _dht22, ref double _Temp, ref double _Hum, ref double _Gas, ref bool _warmup)
 {
@@ -291,7 +291,7 @@ public void compareValues(Mcp3008 _mcp, Dht22 _dht22, ref double _Temp, ref doub
 ```
 Die Methode sieht zwar kompliziert aus, doch sie dient jediglich zur Ausfilterung von flaschen Sensordaten. Werden flasche Werte erfasst oder eine zu hohe Differenz zum vorherigen Wert erkannt, so wird der vorherige Wert übernommen. Wird ein richtiger Wert erfasst, so wird der Wert mittels ```CallByReference``` überschrieben. 
 
-#### Speicherung der Daten
+#### **Speicherung der Daten**
 ```csharp                                      Usage
 public String save()
 {
@@ -321,7 +321,7 @@ Dies ist eine Auflistung der attribute von der Klasse CTag
 
 ### Methoden
 
-#### Überladener Konstruktor
+#### **Überladener Konstruktor**
 ```csharp                                      Usage
 public tag(DateTime _now, stunden _Stunde) //Überladener Constructor
 {
@@ -332,7 +332,7 @@ public tag(DateTime _now, stunden _Stunde) //Überladener Constructor
 ```
 Der überladene Konstruktor erstellt bei Instanzierung ein Header für die txt-Datei mit dem aktuellen Datum, um die späteren Daten dem Datum zuordnen zu können. Zudem wird das Stundenobjekt übernommen und auf das Stundenarray mit der aktuellen Stunde als Index überschrieben. Somit baut sich mit jeder Stunde ein gefülltes Stunden Array auf.
 
-#### Speicherung der Daten in txt-Datei
+#### **Speicherung der Daten in txt-Datei**
 ```csharp                                      Usage
 public void save(int _stunde)
 {
