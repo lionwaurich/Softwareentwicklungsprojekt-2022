@@ -268,9 +268,24 @@ Die Methode dient lediglich für die Erfassung eines zu hohen Gaswertes, steigt 
 ```
 Die Methode sieht zwar kompliziert aus, doch sie dient jediglich zur Ausfilterung von flaschen Sensordaten. Werden flasche Werte erfasst oder eine zu hohe Differenz zum vorherigen Wert erkannt, so wird der vorherige Wert übernommen. Wird ein richtiger Wert erfasst, so wird der Wert mittels ```CallByReference``` überschrieben. 
 
+<br/>
+
+#### Speicherung der Daten
+```csharp                                      Usage
+    public String save()
+    {
+        Average(); //Durchschnitt der Werte erstellen
+
+        //Übergabe von fertigem txt-File-Fragment
+        return "  bis " + hour + " Uhr:\n" +
+        "  Zimmertemperatur: " + stdAveTemp + " °C\n" +
+        "  Luftfeuchtigkeit: " + stdAveHum + " %\n" +
+        "  Gaskonzentration: " + stdAveGas + " %\n";
+    }
+```
+Die Methode erstellt beim Aufruf eine Stringkette, welche die Durchschnittswerte der laufenden Stunde beinhaltet.
+
 ### CTag ###
-
-
 ```csharp                                      Usage
 
 public tag(DateTime _now, stunden _Stunde) //Überladener Constructor
