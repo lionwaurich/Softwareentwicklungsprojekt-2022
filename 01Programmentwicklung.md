@@ -2,7 +2,7 @@
 
 | Parameter                | Informationen                                                                                                                                                                          |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Veranstaltung**       | Projekt Softwareecntwicklung                                                                                                                                                           |
+| **Veranstaltung**       | Projekt Softwareentwicklung                                                                                                                                                           |
 | **Semester**               |   Sommersemester 2022                                                                                                                                                                                        |
 | **Hochschule**          | Technische Universität Bergakademie Freiberg                                                                                                                                                      
 | **Autoren**              | Lion Waurich (65695) / Caio Marcas Menz (66654)                            
@@ -21,7 +21,7 @@ Die Software wird objektorientiert programmiert und und beinhaltet 2 Klassen. Di
 Das folgende Bild zeigt die Grundidee unserer Software für den Raspberry Pi, bei dem 5 Klassen inkludiert sind, wobei die Klasse CJahr die übergeordnete Klasse von allen ist. Die untergeordneten Klassen sind jeweils Kompositionen der nächst übergeordneten Klasse. Die Daten sollten ursprünglich über die ganze Laufzeit des Programms in den Objekten der Klassen gespeichert werden werden, was aber einen unnötig hohen Speicherverbrauch aufweisen und im schlimmsten Fall zu Datenanomalien führen würde. Somit wurde das Klasssendiagramm auf das Nötigste runtergebrochen und letzendlich nur durch Zwei Klassen realisiert. Nämlich CTag und Seiner Komposition CStunden.
 
 ## Endgültiges Klassendiagramm
-![engültiges Klassendiagramm]()
+![engültiges Klassendiagramm](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/Grafiken/Programm_Entwicklung/endg%C3%BCltiges_Klassendiagramm.png)
 
 
 ### CStunde ###
@@ -29,6 +29,7 @@ Die Klasse CStunden ist für die aktuelle Ein-/Ausgabe von/auf den peripheren Ko
 diese erstellt für jedes Stundenobjekt die Durchschnittswerte der 3 Attribute Temperatur, Luftfeuchtigkeit und Gas-Qualität bei Anbruch der nächsten Stunde.
 
 ### CTag ###
+
 
 ```csharp                                      Usage
 
