@@ -12,6 +12,7 @@
 * [Herangehensweise an die Software des Respberry Pi's](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#herangehensweise-an-die-software-des-respberry-pis)
      * [Erstes Klassendiagramm](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#erstes-klassendiagramm)
      * [Endgültiges Klassendiagramm](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#endg%C3%BCltiges-klassendiagramm)
+* [Bibliotheken]()
 * [CStunde](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#cstunde)
    * [Attribute](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#attribute)
    * [Methoden](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#methoden)
@@ -48,7 +49,6 @@ Das folgende Bild zeigt die Grundidee unserer Software für den Raspberry Pi, be
 Hier zu sehen ist das endgültige Klassendiagramm mit nur zwei Klassen, wobei CStunden nur noch den Durchschnitt der Rohdaten über die jeweilige Stunde in ```CTag``` speichert und ```CTag``` diese bei Alauf des Tages in eine txt-Datei speichert. Somit wird verhindert, dass die Werte über die Laufzeit lokal im Programm gespeichert werden und im Falle eines Ausfalls des Raspberry Pi's diese nicht verloren gehen. Zudem ist der Code somit auch übersichtlicher, da man ein Jahr genauso mit 365 Tagen realisieren kann ohne noch ```CWoche```, ```CMonat``` und ```CJahr``` zu implementieren, wie man aus dem ersten Klassendiagramm entnehmen kann.
 
 ## Bibliotheken
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ```csharp                                      Usage
 using System;
 using Iot.Device.DHTxx; //Sensor-Bibliothek
