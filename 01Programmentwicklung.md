@@ -89,7 +89,6 @@ Diese Methode wird benutzt, um das letzte Datum beim Minutenwechsel in das jewei
          sum = 0;
      }
  }
- public void display(DateTime _now, double _Temp, double _Hum, double _Gas)
 ```
 Die Methode ```void Average()``` soll den Durchschnitt der Minutenarrays von Temperatur, Luftfeuchtigkeit und Gas-Qualität berechnen, deshalb wird ein Jagged-Array benutz um diese Arrays auf eine Dimension zu erweitern, um bei der neuen Dimension, die Kategorien auswählen zu können. Dies ist in den darunterliegenden Schleifen von großem nutzen, da die äußere Schleife, die zu bearbeitende Kategorie auswählt und die innere Schleife erstellt die Summe der Werte und abschließend den Mittelwert.
 
