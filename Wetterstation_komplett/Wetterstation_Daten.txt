@@ -1,0 +1,18 @@
+[ 23/07/2022:
+  bis 21 Uhr:
+  Zimmertemperatur: 26 °C
+  Luftfeuchtigkeit: 59 %
+  Gaskonzentration: 28 %
+  bis 22 Uhr:
+  Zimmertemperatur: 25 °C
+  Luftfeuchtigkeit: 57 %
+  Gaskonzentration: 29 %
+  bis 23 Uhr:
+  Zimmertemperatur: 25 °C
+  Luftfeuchtigkeit: 53 %
+  Gaskonzentration: 28 %
+  bis 0 Uhr:
+  Zimmertemperatur: 23 °C
+  Luftfeuchtigkeit: 55 %
+  Gaskonzentration: 27 %
+]
