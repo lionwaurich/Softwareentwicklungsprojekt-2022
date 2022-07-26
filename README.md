@@ -35,3 +35,4 @@ Die erste Alarmstufe wird ausgelöst, wenn der Luftqualitätswert über 35% "sch
 * [Microsoft Tutorials](https://docs.microsoft.com/de-de/dotnet/iot/tutorials/blink-led)
 * [Raspberry Pi Tutorials](https://tutorials-raspberrypi.de/raspberry-pi-gas-sensor-mq2-konfigurieren-und-auslesen/)
 * [Netzmafia Raspberry Pi](http://www.netzmafia.de/skripten/hardware/RasPi/)
+* [Github: Dotnet/Iot](https://github.com/dotnet/iot/issues/416)
