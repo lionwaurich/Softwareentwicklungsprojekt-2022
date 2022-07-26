@@ -21,7 +21,11 @@ Die erste Alarmstufe wird ausgelöst, wenn der Luftqualitätswert über 35% "sch
 
 * Der erste Start des Programmes:
 
-![Start]()
+![Start](/Grafiken/Raspberry_Aufbau/Start.jpeg)
+
+* Nachdem das System hochgefahren ist, leuchtet die LED grün und der Buzzer gibt ein akustisches Signal
+
+![hochgefahren]()
 
 # Verwendete Software
 
