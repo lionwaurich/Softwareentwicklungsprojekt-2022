@@ -27,7 +27,7 @@
    * [Methoden](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#methoden-1)
         * [Überladener Konstruktor](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#%C3%BCberladener-konstruktor-1)
         * [Speicherung der Daten in txt-Datei](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#speicherung-der-daten-in-txt-datei)
-        * * [Ansicht der txt-Datei](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#aufbau-der-txt-datei)
+        * [Ansicht der txt-Datei](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#aufbau-der-txt-datei)
 * [Main-Programm](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/01Programmentwicklung.md#main-programm)
 
 <br/>
@@ -380,7 +380,7 @@ Die Methode überprüft die Uhrzeit und baut die Stringkette solange aus den ein
 #### **Aufbau der txt-Datei**
 ![txt-Datei-Bild](/Grafiken/Programm_Entwicklung/txt-Datei-Bild.png)
 
-Zu sehen ist hier der Aufbau der txt-Datei ab Beginn der Stunde der Programmlaufzeit.   
+Zu sehen ist hier der Aufbau der txt-Datei ab Beginn der Stunde der Programmlaufzeit. Hier kommt man zur txt-Datei.   
    
 ## Main-Programm
 ```csharp                                      Usage
