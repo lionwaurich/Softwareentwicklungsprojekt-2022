@@ -127,7 +127,7 @@ dotnet add package Iot.Device.Bindings --version 2.1.0-*
 
 ![AM2302](/Grafiken/Fritzing_Steckpläne/AM2302.png)
 
-* Mit dem Folgenden C# Code werden die Sensordaten ausgelesen. Das Programm snippet wird dann in das Main Programm Implementiert
+* Mit dem Folgenden C# Code werden die Sensordaten ausgelesen. Das Programm sniped wird dann in das Main Programm Implementiert
 
 
 ```csharp                                      Usage
