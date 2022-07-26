@@ -94,7 +94,7 @@ Die Methode ```void Average()``` soll den Durchschnitt der Minutenarrays von Tem
 
 <br/>
 
-####
+#### Displayausgabe
 
 ```csharp                                      Usage
 public void display(DateTime _now, double _Temp, double _
