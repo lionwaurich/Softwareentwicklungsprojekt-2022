@@ -12,7 +12,7 @@
  * [Installieren des Raspberry Pi Os](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/00Raspberry%20Pi.md#installieren-des-raspberry-pi-os)
  * [Remote Access auf den Raspberry Pi](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/00Raspberry%20Pi.md#remote-accsess-auf-den-raspberry-pi)
  * [C-Sharp auf dem Raspberry Pi](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/00Raspberry%20Pi.md#C-Sharp-auf-dem-Raspberry-Pi)
- * [.Net auf dem Raspberry Pi Installieren und Visual Studio nutzen](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/00Raspberry%20Pi.md#net-auf-dem-raspberry-pi-installieren-und-visual-studio-nutzen)
+ * [.Net auf dem Raspberry Pi installieren und Visual Studio nutzen](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/00Raspberry%20Pi.md#net-auf-dem-raspberry-pi-installieren-und-visual-studio-nutzen)
  * [Ansteuern der Sensoren](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/00Raspberry%20Pi.md#Ansteuern-der-Sensoren)
     * [AM2302](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/00Raspberry%20Pi.md#am2302)
     * [Nutzung des MQ-135 mithilfe des MCP3008 und Pegelwandlers](https://github.com/Lion127/Softwareentwicklungsprojekt-2022/blob/main/00Raspberry%20Pi.md#nutzung-des-mq135-mithilfe-des-mcp3008-und-pgelwandlers)
@@ -24,7 +24,7 @@
 * Die Micro SD-Karte mittels Raspberry Pi Imager beschreiben 
 * Bei der Konfiguration sollte der SSH zugang aktiviert, die WLAN Einstellungen und Benutzername/Passwort gewählt werden
 > **Achtung** Falls der SSH zugang nicht aktiviert wurde muss eine Datei mit dem Namen "SSH" im "boot" Ordner hinzugefügt werden
-* Nach der Installation des OS den Raspberry Starten 
+* Nach der Installation des OS den Raspberry starten 
 > Falls das WLAN nicht Konfiguriert wurde, muss der Raspberry Pi über ein LAN Kabel mit dem Router verbunden werden
 * Die IP-Adresse des Raspberry Pi finden wir in den Router Einstellungen/Informationen unseres Providers 
 * Die IPv4-Adresse des Raspberry Pi stellen wir auf statisch
@@ -33,7 +33,7 @@
 
 # Remote Accsess auf den Raspberry Pi 
 
-* Auf dem Rechner, mit dem wir den Raspberry Ansteuern wollen, müssen wir das Programm "Putty" Installieren
+* Auf dem Rechner, mit dem wir den Raspberry Ansteuern wollen, müssen wir das Programm "Putty" installieren
 * Die ermittelte IPv4 geben wir als Host Name ein und gelangen so auf die Bash des Raspberry Pi via Secure Shell (SSH) 
 > Secure Shell ist ein Netzwerkprotokoll, welches eine möglichkeit gibt, über ein ungesichertes Netzwerk gesichert auf einen Rechner zuzugreifen
 * Dort Melden wir uns mit dem Benutzernamen und Passwort an, welches wir zuvor konfiguriert haben
@@ -51,8 +51,8 @@ sudo raspi-config
 ```
 sudo root 
 ```
-* Auf dem Rechner, über den wir auf den Raspberry zugreifen wollen laden wir uns "real VNC viewer" runter und Installieren das Programmm
-* wenn alle Konfigurationen stimmen und der Raspberry den VNC-Server gestartet hat, können wir die IPv4 Adresse als Host bei "real VNC viewer" eingeben und nach eingabe des Benutzers und des dazugehörigen Passwortes gelangen wir auf die Grafische oberfläsche des Raspberry Pi 
+* Auf dem Rechner, über den wir auf den Raspberry zugreifen wollen laden wir uns "real VNC viewer" runter und installieren das Programmm
+* wenn alle Konfigurationen stimmen und der Raspberry den VNC-Server gestartet hat, können wir die IPv4 Adresse als Host bei "real VNC viewer" eingeben und nach eingabe des Benutzers und des dazugehörigen Passwortes gelangen wir auf die grafische Oberfläsche des Raspberry Pi 
 * damit wir später die Sensoren und GPIOs ansteuern können müssen wir weitere Konfigurationen im "raspi-config" Menü vornehmen
 * wir wechseln in der Raspberry Pi Configuration auf die Interfaces und aktivieren folgendes
     * SPI (Serial Peripheral Interface)
@@ -63,10 +63,10 @@ sudo root
 
 # C-Sharp auf dem Raspberry Pi
 
-Das Raspberry Pi OS ist ein Linux basiertes System und .Net ein windows Framework. .Net nutzt man zum entwickeln und Ausführen von C# Programmen. Über Visual Studio ist es schnell und einfach Programme zu entwickeln, kompilieren und auszuführen. Leider ist es nicht ohne probleme möglich C-Sharp Programme auf dem Raspberry Pi auszuführen. Man könnte das Programm auf einen Stick Laden und mit dem Bytecode-Interpreter "MONO" auf dem Raspberry ausführen. Dies ist aber ein sehr aufwendiger vorgang, denn man müsste bei Fehlern das Programm immer wieder neu auf den stick laden und auf dem Raspberry ausführen. Oder man nutzt das Windows IOT Tool. Dies ist aber auch nicht zu empfehlen, weil man damit das Raspberry Pi Os ersetzten müsste. Der Raspberry läuft am besten mit dem Hauseigenen Linux System. Viele Tools wären beim Windows IOT nicht mit dabei und Bugs treten vermehrt auf. Deswegen haben wir uns dafür Entschieden, ".Net" auf dem Raspberry Pi zu installieren und damit gehen wir diesen Problemen aus dem Weg. ".Net" kann man nicht in den Erweiterungen des Raspberry Pi finden, jedoch lässt es sich über die Bash installieren. Der Aufwand ist einmalig zwar höher, erleichtert die spätere Entwicklung des Programms jedoch enorm.
+Das Raspberry Pi OS ist ein Linux basiertes System und .Net ein windows Framework. .Net nutzt man zum entwickeln und ausführen von C# Programmen. Über Visual Studio ist es schnell und einfach Programme zu entwickeln, kompilieren und auszuführen. Leider ist es nicht ohne Probleme möglich, C-Sharp Programme auf dem Raspberry Pi auszuführen. Man könnte das Programm auf einen Stick laden und mit dem Bytecode-Interpreter "MONO" auf dem Raspberry ausführen. Dies ist aber ein sehr aufwendiger vorgang, denn man müsste bei Fehlern das Programm immer wieder neu auf den stick laden und auf dem Raspberry ausführen. Oder man nutzt das Windows IOT Tool. Dies ist aber auch nicht zu empfehlen, weil man damit das Raspberry Pi Os ersetzten müsste. Der Raspberry läuft am besten mit dem Hauseigenen Linux System. Viele Tools wären beim Windows IOT nicht mit dabei und Bugs treten vermehrt auf. Deswegen haben wir uns dafür Entschieden, ".Net" auf dem Raspberry Pi zu installieren und damit gehen wir diesen Problemen aus dem Weg. ".Net" kann man nicht in den Erweiterungen des Raspberry Pi finden, jedoch lässt es sich über die Bash installieren. Der Aufwand ist einmalig zwar höher, erleichtert die spätere Entwicklung des Programms jedoch enorm.
 
 
-# .Net auf dem Raspberry Pi Installieren und Visual Studio nutzen
+# .Net auf dem Raspberry Pi installieren und Visual Studio nutzen
 
 * Dieser Befehl wird über Putty auf der Bash eingegeben und Installiert .Net 6 auf dem Raspberry Pi
 
