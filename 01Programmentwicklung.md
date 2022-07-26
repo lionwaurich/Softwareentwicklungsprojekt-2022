@@ -8,7 +8,7 @@
 | **Autoren**              | Lion Waurich (65695) / Caio Marcas Menz (66654)                            
 
 ---------------------------------------------------------------------------------
-# Chronologie 
+# Chronologie
 
 ## Herangehensweise an die Software des Respberry Pi's ##
 
