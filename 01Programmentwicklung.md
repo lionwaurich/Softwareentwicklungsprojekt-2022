@@ -32,6 +32,13 @@ diese erstellt für jedes Stundenobjekt die Durchschnittswerte der 3 Attribute T
 CStunde umfasst 7 Methoden wobei eine davon ein überladener Konstruktor ist
 
 #### Überladener Konstruktor
+```csharp                                      Usage
+public stunden(int _hour, int _min) //Überladener Constructor
+{
+    hour = _hour; //Aktuelle Stunde auf Attribut speichern
+    start_min = _min; //Minute bei dem der Raspberry gestartet hat
+}
+```
 
 ### CTag ###
 
